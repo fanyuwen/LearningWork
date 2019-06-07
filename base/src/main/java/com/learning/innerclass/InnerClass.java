@@ -1,4 +1,4 @@
-package com.learning.base.innerclass;
+package com.learning.innerclass;
 
 /**
  * @author fanyuwen
@@ -47,9 +47,10 @@ public class InnerClass {
     }
 
     /**
-     * 静态内部类,没有
+     * 静态内部类,没有以用外围类的实例所以无法直接访问外围对象的实例成员(属性/方法)
+     * 可以有静态属性
      */
     static class StaticInner{
-        
+
     }
 }

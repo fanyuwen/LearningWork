@@ -1,4 +1,4 @@
-package com.learning.base.datatype;
+package com.learning.datatype;
 
 /**
  * @author fanyuwen

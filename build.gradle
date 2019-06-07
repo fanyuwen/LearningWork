@@ -36,5 +36,5 @@ dependencies {
     compile group: 'org.apache.shiro', name: 'shiro-core', version: "$ShiroCoreVersion"
     //shiro-web
     compile group: 'org.apache.shiro', name: 'shiro-web', version: "$ShiroCoreVersion"
-
+    
 }

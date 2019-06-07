@@ -1,4 +1,4 @@
-package com.learning.base.generics;
+package com.learning.generics;
 
 /**
  * @author fanyuwen

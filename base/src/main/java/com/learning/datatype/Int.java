@@ -1,4 +1,4 @@
-package com.learning.base.datatype;
+package com.learning.datatype;
 
 /**
  * @author fanyuwen
@@ -6,6 +6,10 @@ package com.learning.base.datatype;
 public class Int {
     //int 类型数据长度为32位 最高位符号位(+-)  2147483647(0x7fffffff) ~ -2147483648(0x80000000)
     private int num;
+
+    public static void main(String[] args) {
+        System.out.println("Hello WOrld");
+    }
 
     /**
      * 算术运算溢出问题

@@ -1,4 +1,4 @@
-package com.learning.util;
+package com.learning;
 
 /**
  * @author fanyuwen

@@ -11,6 +11,7 @@ ext.SpringVersion = "5.1.7.RELEASE"
 ext.MysqlVersion = "8.0.16"
 ext.MybatisVersion = "3.5.1"
 ext.SpringMybatisVersion = "2.0.1"
+ext.ShiroCoreVersion = "1.4.1"
 
 repositories {
     mavenCentral()
@@ -31,4 +32,9 @@ dependencies {
     compile group: 'org.mybatis', name: 'mybatis', version: "$MybatisVersion"
     //spring-mybatis
     compile group: 'org.mybatis', name: 'mybatis-spring', version: "$SpringMybatisVersion"
+    //shiro-core
+    compile group: 'org.apache.shiro', name: 'shiro-core', version: "$ShiroCoreVersion"
+    //shiro-web
+    compile group: 'org.apache.shiro', name: 'shiro-web', version: "$ShiroCoreVersion"
+
 }

@@ -8,8 +8,9 @@ This project is mainly a summary of the problems encountered in the work and the
 
 1. **spring** v:*5.1.7*.RELEASE
 2. **mybatis** v:*3.5.1*
-3. **netty**
-4. **kafka**
-5. **follow-up...**
+3. **shiro** v:*1.4.1*
+4. **netty**
+5. **kafka**
+6. **follow-up...**
 
 by fanyuwen

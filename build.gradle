@@ -7,10 +7,28 @@ version '0.0.1-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
+ext.SpringVersion = "5.1.7.RELEASE"
+ext.MysqlVersion = "8.0.16"
+ext.MybatisVersion = "3.5.1"
+ext.SpringMybatisVersion = "2.0.1"
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    //spring-context
+    compile group: 'org.springframework', name: 'spring-context', version: "$SpringVersion"
+    //spring-web/mvc
+    compile group: 'org.springframework', name: 'spring-web', version: "$SpringVersion"
+    compile group: 'org.springframework', name: 'spring-webmvc', version: "$SpringVersion"
+    //spring-jdbc
+    compile group: 'org.springframework', name: 'spring-jdbc', version: "$SpringVersion"
+    //mysql-driver
+    compile group: 'mysql', name: 'mysql-connector-java', version: "$MysqlVersion"
+    //mybatis
+    compile group: 'org.mybatis', name: 'mybatis', version: "$MybatisVersion"
+    //spring-mybatis
+    compile group: 'org.mybatis', name: 'mybatis-spring', version: "$SpringMybatisVersion"
 }

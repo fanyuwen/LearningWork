@@ -1,4 +1,4 @@
-# LearningWork
+# LearningWork(工作学习并总结,互帮互助,持续沉淀)
 This project is mainly a summary of the problems encountered in the work and the learning framework of the experience
 
 ##### The project build by *gradle* v*5.4.1*
@@ -7,13 +7,14 @@ This project is mainly a summary of the problems encountered in the work and the
 ##### The following open source frameworks are involved:
 
 1. **spring** v:*5.1.7*.RELEASE
-2. **mybatis** v:*3.5.1*
-3. **shiro** v:*1.4.1*
-4. **netty**
-5. **MQ** (kafka)(activeMQ)
-6. **follow-up...**
+2. **spring boot**
+3. **mybatis** v:*3.5.1*
+4. **shiro** v:*1.4.1*
+5. **netty**
+6. **MQ** (kafka)(activeMQ)
+7. **follow-up...**
 
-by fanyuwen
+by *fanyuwen*
 
 ### 成员必读:
 1. 所提交的代码都必须要有注释,哪怕只有一行(标识是谁提交的)

@@ -12,5 +12,12 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    //mysql-driver
+    compile group: 'mysql', name: 'mysql-connector-java', version: "$MysqlVersion"
+    //mybatis
+    compile group: 'org.mybatis', name: 'mybatis', version: "$MybatisVersion"
+    //spring-mybatis
+    compile group: 'org.mybatis', name: 'mybatis-spring', version: "$SpringMybatisVersion"
+    //依赖spring模块
+    compile project(':spring')
 }

@@ -12,7 +12,7 @@ allprojects {
     }
 
     //统一采用utf-8编码格式整天编译项目
-    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
     //统一配置依赖的开源库的版本
     ext {

@@ -13,7 +13,15 @@ public class InnerClass {
      * @param inner
      */
     void accessInnerClass(DynamicInner inner){
-        System.out.println(inner.innerName);
+        System.out.println(inner.dynamicInnerName);
+    }
+
+    /**
+     * 外围类对象能够访问静态内部类对象的私有属性
+     * @param inner
+     */
+    void accessInnerClass(StaticInner inner){
+        System.out.println(inner.staticInnerName);
     }
 
     public static void main(String[] args) {
@@ -29,7 +37,7 @@ public class InnerClass {
      */
     class DynamicInner {
 //        private final InnerClass InnerClass.this; 编译器自动生成,所以能够访问外围类的成员(属性,方法)
-        private String innerName;
+        private String dynamicInnerName;
         /**
          * 可以直接访问外围对象的私有属性和方法
          */
@@ -51,6 +59,17 @@ public class InnerClass {
      * 可以有静态属性
      */
     static class StaticInner{
+        private String staticInnerName;
 
+        //静态属性
+        static int staticInnerAge;
+
+        /**
+         * 依然可以访问外围实例的私有属性
+         * @param innerClass 外围类实例
+         */
+        void accessPrivate(InnerClass innerClass){
+            System.out.println(innerClass.name);
+        }
     }
 }

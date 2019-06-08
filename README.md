@@ -4,7 +4,7 @@ This project is mainly a summary of the problems encountered in the work and the
 ##### The project build by *gradle* v*5.4.1*
 ###### base on jdk 1.8
 
-##### The following open source frameworks are involved (已创建的模块如下):
+##### The following open source frameworks are involved (创建完模块之后记得更新一下列表,序号要写对啊!):
 
 1. **spring** v:*5.1.7*.RELEASE
 2. **spring boot**
@@ -21,7 +21,7 @@ by *fanyuwen*
 2. 提交的comment必须表述详细
 3. 提交之前要经过严格测试,保证代码质量
 4. 尊重他人的结果,要在获得别人的许可下才能修改别人的代码
-5. 项目整体已经按照父子模块的方式进行创建了,每一个学习的主题都是一个模块(尽量保证大主题一致)
+5. 项目整体已经按照父子模块的方式进行创建了,每一个学习的主题都是一个模块(尽量保证大主题一致),已创建的模块见**settings.gradle**文件
 6. 要理清楚你构建的模块的依赖关系
 7. 待定...
 

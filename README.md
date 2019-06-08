@@ -4,7 +4,7 @@ This project is mainly a summary of the problems encountered in the work and the
 ##### The project build by *gradle* v*5.4.1*
 ###### base on jdk 1.8
 
-##### The following open source frameworks are involved:
+##### The following open source frameworks are involved (已创建的模块如下):
 
 1. **spring** v:*5.1.7*.RELEASE
 2. **spring boot**

@@ -8,13 +8,13 @@ public class Int {
     private int num;
 
     public static void main(String[] args) {
-        System.out.println("Hello WOrld");
+        System.out.println("Hello World");
     }
 
     /**
      * 算术运算溢出问题
      */
-    void overflow(){
+    void overflow() {
         int num = 0x7fff_ffff;//最大值
         num = num + 1;
         System.out.println(num);//变成最小值了(0x80000000)
@@ -24,7 +24,7 @@ public class Int {
      * 自动装箱缓存问题
      * {@link java.lang.Integer@IntegerCache}
      */
-    void cache(){
+    void cache() {
         //目前通过源码可知在装箱操作中 -128 ~ 127 是有缓存的
         Integer a = 126;//等同于调用 Integer.valueOf(126)
         Integer b = 126;

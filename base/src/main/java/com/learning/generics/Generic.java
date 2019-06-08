@@ -21,7 +21,7 @@ class A<T extends Comparable<? super T>> {
  *
  * @param <T>
  */
-class B<T, X extends T> {
+class B<T> {
     private T value;
 
     /**
@@ -29,7 +29,7 @@ class B<T, X extends T> {
      *
      * @param param param
      */
-    void upperBound(B<? extends T, X> param) {
+    void upperBound(B<? extends T> param) {
         T t = param.get();
         System.out.println(t);
     }
@@ -38,10 +38,10 @@ class B<T, X extends T> {
      * 下界通配符:只能调用消费方法(即泛型约束类型为方法参数),
      * 可以用约束的下界类型或其子类型的值作为方法参数
      *
-     * @param param param
+     * @param param    param
      * @param newValue newvalue
      */
-    void lowerBound(B<? super T, X> param, X newValue) {
+    <X extends T> void lowerBound(B<? super T> param, X newValue) {
         param.set(newValue);
     }
 

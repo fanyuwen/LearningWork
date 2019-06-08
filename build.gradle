@@ -11,6 +11,9 @@ allprojects {
         mavenCentral()
     }
 
+    //统一采用utf-8编码格式整天编译项目
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
     //统一配置依赖的开源库的版本
     ext {
         SpringVersion = "5.1.7.RELEASE"
@@ -19,8 +22,9 @@ allprojects {
         SpringMybatisVersion = "2.0.1"
         ShiroCoreVersion = "1.4.1"
     }
-
+    
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.12'
     }
 }
+

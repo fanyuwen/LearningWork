@@ -1,7 +1,6 @@
 package com.learning;
 
 import com.learning.resource.ResourceTest;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.*;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -13,7 +12,6 @@ import java.util.Arrays;
  * @author Spring的总配置类
  */
 @Configuration
-@ComponentScan("com.learning")
 public class SpringConfigure {
 
     //基于java bean的方式将指定路径上的文件加载为 org.springframework.core.io.Resource

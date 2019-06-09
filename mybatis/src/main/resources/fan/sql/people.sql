@@ -3,8 +3,8 @@ CREATE TABLE `people` (
   `name` varchar(255) NOT NULL,
   `age` varchar(45) DEFAULT NULL,
   `hobby` varchar(255) DEFAULT NULL,
-  `es_time` timestamp NULL DEFAULT NULL,
-  `up_time` timestamp NULL DEFAULT NULL,
+  `es_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `up_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='这个表是用来写着玩的';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='这个表是用来写着玩的';

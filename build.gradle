@@ -21,6 +21,7 @@ allprojects {
         MybatisVersion = "3.5.1"
         SpringMybatisVersion = "2.0.1"
         ShiroCoreVersion = "1.4.1"
+        DbcpVersion = "2.6.0"
     }
     
     dependencies {

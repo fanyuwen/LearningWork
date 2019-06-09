@@ -14,10 +14,14 @@ repositories {
 dependencies {
     //mysql-driver
     compile group: 'mysql', name: 'mysql-connector-java', version: "$MysqlVersion"
+    //dbcp(目前选用dbcp连接池)
+    compile group: 'org.apache.commons', name: 'commons-dbcp2', version: "$DbcpVersion"
     //mybatis
     compile group: 'org.mybatis', name: 'mybatis', version: "$MybatisVersion"
     //spring-mybatis
     compile group: 'org.mybatis', name: 'mybatis-spring', version: "$SpringMybatisVersion"
     //依赖spring模块
     compile project(':spring')
+    //依赖util模块
+    compile project(":util")
 }

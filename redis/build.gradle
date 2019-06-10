@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'com.fanyuwen'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //依赖的jedis
+    compile group: 'redis.clients', name: 'jedis', version: "$JedisVersion"
+    //依赖的Spring data redis
+    compile group: 'org.springframework.data', name: 'spring-data-redis', version: "$SpringDataRedisVersion"
+    //依赖的Spring session data redis
+    compile group: 'org.springframework.session', name: 'spring-session-data-redis', version: "$SpringSessionDataRedisVersion"
+    //依赖Spring 基础模块
+    compile project(':spring')
+}

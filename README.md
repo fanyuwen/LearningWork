@@ -1,5 +1,6 @@
 # LearningWork(工作学习并总结,互帮互助,持续沉淀)
 This project is mainly a summary of the problems encountered in the work and the learning framework of the experience
+##### 团队成员能够把在工作中遇到的问题总结,把学习到的知识总结,共同沉淀成这个项目的结晶
 
 ##### The project build by *gradle* v*5.4.1*
 ###### base on jdk 1.8
@@ -12,7 +13,8 @@ This project is mainly a summary of the problems encountered in the work and the
 4. **shiro** v:*1.4.1*
 5. **netty**
 6. **MQ** (kafka)(activeMQ)
-7. **follow-up...**
+7. **redis** v:*(jedis)2.10.2*
+8. **follow-up...**
 
 by *fanyuwen*
 

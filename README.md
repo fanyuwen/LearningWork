@@ -14,7 +14,7 @@ This project is mainly a summary of the problems encountered in the work and the
 5. **netty**
 6. **MQ** (kafka)(activeMQ)
 7. **redis** v:*(jedis)2.10.2*
-8. **follow-up...**
+8. **follow-up(只要是你感兴趣上面又没有列出来的,可以自己创建或者提出来)...**
 
 by *fanyuwen*
 

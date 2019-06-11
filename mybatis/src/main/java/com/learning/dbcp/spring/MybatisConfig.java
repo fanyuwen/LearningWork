@@ -1,6 +1,7 @@
 package com.learning.dbcp.spring;
 
 import com.learning.StringUtils;
+import com.learning.encrypt.des.DES;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
@@ -64,8 +65,8 @@ public class MybatisConfig {
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName(driverClassName);
         basicDataSource.setUrl(url);
-        basicDataSource.setUsername(username);
-        basicDataSource.setPassword(password);
+        basicDataSource.setUsername(DES.decrypt(username));
+        basicDataSource.setPassword(DES.decrypt(password));
         basicDataSource.setInitialSize(initsize);
         basicDataSource.setMaxTotal(maxtotal);
         basicDataSource.setMaxIdle(maxidle);

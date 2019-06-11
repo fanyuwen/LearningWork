@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learning.dbcp.spring.dao.PeopleDao">
+    <insert id="addPeople" parameterType="com.learning.dbcp.spring.bean.People" useGeneratedKeys="true"
+            keyProperty="id">
+        INSERT INTO `people` (
+        `name`,
+        `age`,
+        `hobby`,
+        `es_time`,
+        `up_time`
+        ) VALUES (
+        #{name},
+        #{age},
+        #{hobby},
+        #{esTime},
+        #{upTime}
+        )
+    </insert>
+
+    <resultMap id="peopleResultMap" type="com.learning.dbcp.spring.bean.People">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+        <result column="hobby" property="hobby"/>
+        <result column="es_time" property="esTime"/>
+        <result column="up_time" property="upTime"/>
+    </resultMap>
+
+    <select id="selectListByPeople" parameterType="com.learning.dbcp.spring.bean.People" resultMap="peopleResultMap">
+        SELECT
+        `id`,
+        `name`,
+        `age`,
+        `hobby`,
+        `es_time`,
+        `up_time`
+        FROM `people`
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="age != null">
+                and age = #{age}
+            </if>
+            <if test="hobby != null">
+                and hobby = #{hobby}
+            </if>
+        </where>
+    </select>
+</mapper>

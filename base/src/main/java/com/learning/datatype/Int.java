@@ -9,6 +9,7 @@ public class Int {
 
     public static void main(String[] args) {
         System.out.println("Hello World");
+        definedInt();
     }
 
     /**
@@ -33,5 +34,14 @@ public class Int {
         a = 129;
         b = 129;
         System.out.println(a == b);//false
+    }
+
+    /**
+     * 从java7开始，可以给数字下面加下划线，让人更加易读。
+     * java编译器会剔除这些下划线。
+     */
+    static void definedInt() {
+        int a = 100_000_000;
+        System.out.println(a);
     }
 }

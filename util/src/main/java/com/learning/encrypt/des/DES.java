@@ -41,6 +41,21 @@ public class DES {
 
     private static final String DEFAULT_KEY = "A1B2C3D4E5F60708";
 
+    /**
+     * 通过键生成器生成键
+     * @return
+     */
+    private static byte[] keyGenerator() {
+        try {
+            KeyGenerator keyGenerator = KeyGenerator.getInstance(KEY_ALGORITHM);
+            keyGenerator.init(DEFAULT_KEY.length());
+            SecretKey secretKey = keyGenerator.generateKey();
+            return secretKey.getEncoded();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private static SecretKey keyGenerator(String keyStr) {
         try {
             byte[] input = HexString2Bytes(keyStr);

@@ -43,12 +43,11 @@ public class DES {
 
     private static SecretKey keyGenerator(String keyStr) {
         try {
-            byte input[] = HexString2Bytes(keyStr);
+            byte[] input = HexString2Bytes(keyStr);
             DESKeySpec desKey = new DESKeySpec(input);
             //创建一个密匙工厂，然后用它把DESKeySpec转换成
             SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(KEY_ALGORITHM);
-            SecretKey securekey = keyFactory.generateSecret(desKey);
-            return securekey;
+            return keyFactory.generateSecret(desKey);
         } catch (InvalidKeyException | NoSuchAlgorithmException | InvalidKeySpecException e) {
             throw new RuntimeException(e);
         }
@@ -88,8 +87,8 @@ public class DES {
         cipher.init(Cipher.ENCRYPT_MODE, deskey, random);
         byte[] results = cipher.doFinal(data.getBytes());
         // 该部分是为了与加解密在线测试网站（http://tripledes.online-domain-tools.com/）的十六进制结果进行核对
-        for (int i = 0; i < results.length; i++) {
-            System.out.print(results[i] + " ");
+        for (byte result : results) {
+            System.out.print(result + " ");
         }
         System.out.println();
         // 执行加密操作。加密后的结果通常都会用Base64编码进行传输

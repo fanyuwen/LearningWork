@@ -10,6 +10,7 @@ import java.security.NoSuchAlgorithmException;
  * @author fanyuwen
  * 所有加密类的父类
  * 参考: https://www.cnblogs.com/onetwo/p/3875551.html
+ *      https://www.cnblogs.com/lz2017/p/6917049.html
  *
  * SHA-1和MD5的比较:
  * 因为二者均由MD4导出，SHA-1和MD5彼此很相似。相应的，他们的强度和其他特性也是相似，但还有以下几点不同：

@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'com.fanyuwen'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':spring')
+    //spring-web/mvc
+    compile group: 'org.springframework', name: 'spring-web', version: "$SpringVersion"
+    compile group: 'org.springframework', name: 'spring-webmvc', version: "$SpringVersion"
+}

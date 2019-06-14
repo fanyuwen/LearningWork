@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'javafx-gradle-plugin'
+}
+
+group 'com.fanyuwen'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    
+}
+
+jfx {
+    appName = "MyAPP"
+    mainClass = "com.javafx.test.MyApplication"
+    vendor="yanhucheng"
+}

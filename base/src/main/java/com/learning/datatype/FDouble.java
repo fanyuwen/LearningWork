@@ -7,10 +7,6 @@ public class FDouble {
     //double 类型数据长度为64 最高位符号位(+-)
     private double value;
 
-    public static void main(String[] args) {
-        new FDouble().expression();
-    }
-
     void compare(double value1, double value2) {
         //使用
         int result;

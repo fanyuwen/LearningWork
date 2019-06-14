@@ -16,4 +16,6 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context', version: "$SpringVersion"
     //spring-jdbc
     compile group: 'org.springframework', name: 'spring-jdbc', version: "$SpringVersion"
+    //spring-test
+    testCompile group: 'org.springframework', name: 'spring-test', version: "$SpringVersion"
 }

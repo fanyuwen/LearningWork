@@ -2,7 +2,7 @@ package com.learning.designpattern.singleton;
 
 /**
  * @author yuwen.fan
- * ×î°²È«µÄµ¥ÁĞÄ£Ê½(·ÀÖ¹ÁË·´Éä¡¢¿½±´(clone)¡¢ĞòÁĞ»¯µÈ¶ÔÏóµÄ´´½¨ÒÔ¼°Ïß³Ì°²È«)
+ * ç»å¯¹å®‰å…¨çš„å•ä¾‹,é˜²æ­¢äº†(åå°„ã€æ‹·è´(clone)ã€ååºåˆ—åŒ–ä»¥åŠçº¿ç¨‹å®‰å…¨)
  */
 public enum Singleton4 {
     SINGLETON_4

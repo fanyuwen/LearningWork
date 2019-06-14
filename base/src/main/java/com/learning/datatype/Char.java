@@ -14,7 +14,7 @@ public class Char {
     /**
      * java语言本身就是支持Unicode字符编码的,所以编写的java代码里面的每一个字符都支持unicode 详情见 java核心技术卷1
      *
-     * 下面的unicode描述跟等价于如下代码
+     * 下面的unicode描述等价于如下代码
      * public void fun() {
      *     System.out.println("java使用unicode编码");
      * }

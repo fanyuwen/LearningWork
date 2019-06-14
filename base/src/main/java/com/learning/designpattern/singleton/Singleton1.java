@@ -1,8 +1,5 @@
 package com.learning.designpattern.singleton;
 
-import java.lang.reflect.AccessibleObject;
-import java.lang.reflect.Constructor;
-
 /**
  * @author SONGWEI
  * @version 1.0
@@ -21,7 +18,7 @@ public class Singleton1 {
      */
     private Singleton1() {
         if (obj != null) {
-            throw new RuntimeException("不能通过反射创建该单例对象");
+            throw new RuntimeException("不能通过反射创建该单例对象" + Singleton1.class);
         }
     }
 

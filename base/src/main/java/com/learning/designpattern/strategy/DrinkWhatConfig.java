@@ -1,21 +1,21 @@
-package com.learning.designpattern.tacticspattern;
+package com.learning.designpattern.strategy;
 
 /**
- *
  * 决定你具体喝什么
- * User: heshuzhuang
- * Date: 2019/6/13
- * Time: 15:32
+ *
+ * @author heshuzhuang
+ * @date 2019/6/13 15:32
  */
 
 public class DrinkWhatConfig {
 
     private RoleHsz roleHsz;
 
-    public DrinkWhatConfig(RoleHsz roleHsz){
+    public DrinkWhatConfig(RoleHsz roleHsz) {
         this.roleHsz = roleHsz;
     }
-    public String drinkWhat(){
+
+    public String drinkWhat() {
         return roleHsz.drink();
     }
 

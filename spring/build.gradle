@@ -14,9 +14,6 @@ repositories {
 dependencies {
     //spring-context
     compile group: 'org.springframework', name: 'spring-context', version: "$SpringVersion"
-    //spring-web/mvc
-    compile group: 'org.springframework', name: 'spring-web', version: "$SpringVersion"
-    compile group: 'org.springframework', name: 'spring-webmvc', version: "$SpringVersion"
     //spring-jdbc
     compile group: 'org.springframework', name: 'spring-jdbc', version: "$SpringVersion"
 }

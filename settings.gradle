@@ -5,4 +5,5 @@ include 'spring' //spring 框架相关
 include 'mybatis' //mybatis
 include 'shiro' //shiro 权限校验
 include 'redis' //redis
+include 'springMVC'
 

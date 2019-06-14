@@ -17,5 +17,5 @@ dependencies {
     //shiro-web
     compile group: 'org.apache.shiro', name: 'shiro-web', version: "$ShiroCoreVersion"
     //spring
-    compile project(":spring")
+    compile project(":mybatis")
 }

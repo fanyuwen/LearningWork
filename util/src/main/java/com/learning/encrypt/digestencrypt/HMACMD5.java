@@ -1,5 +1,7 @@
 package com.learning.encrypt.digestencrypt;
 
+import com.learning.StringUtils;
+
 import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
@@ -15,7 +17,7 @@ import java.util.Base64;
  * 使用一个密钥生成一个固定大小的小数据块,
  * 即MAC,并将其加入到消息中,然后传输.接收方利用与发送方共享的密钥进行鉴别认证等.
  */
-public class HMACMD5 {
+public class HMACMD5 extends DigestEncrypt {
     private static final String KEY_MAC = "HmacMD5";
 
     private static final String KEY = initMacKey();
@@ -29,12 +31,19 @@ public class HMACMD5 {
     public static String initMacKey() {
         KeyGenerator keyGenerator;
         try {
+            //初始化 keygenerator
             keyGenerator = KeyGenerator.getInstance(KEY_MAC);
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
+        //生产密钥
         SecretKey secretKey = keyGenerator.generateKey();
         return Base64.getEncoder().encodeToString(secretKey.getEncoded());
+    }
+
+    @Override
+    public String getKey() {
+        return initMacKey();
     }
 
     /**
@@ -45,10 +54,25 @@ public class HMACMD5 {
      * @return
      * @throws Exception
      */
-    public static String encryptHMAC(byte[] data, String key) throws Exception {
+    private static String encryptHMAC(byte[] data, String key) throws Exception {
         SecretKey secretKey = new SecretKeySpec(Base64.getDecoder().decode(key), KEY_MAC);
         Mac mac = Mac.getInstance(secretKey.getAlgorithm());
         mac.init(secretKey);
         return new String(mac.doFinal(data));
+    }
+
+    @Override
+    protected String enEncode(String message, String key) {
+        try {
+            key = StringUtils.isEmpty(key) ? KEY : key;
+            return encryptHMAC(message.getBytes(), key);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    protected String getAlgorithmName() {
+        return KEY_MAC;
     }
 }

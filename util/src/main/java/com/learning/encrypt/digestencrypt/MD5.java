@@ -36,7 +36,7 @@ public class MD5 extends DigestEncrypt {
         super(charset);
     }
 
-    public String enEncode(String message) {
+    public String enEncode(String message, String key) {
         return defaultEncode(message);
     }
 

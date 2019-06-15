@@ -38,7 +38,7 @@ public class SHA extends DigestEncrypt {
     }
 
     @Override
-    public String enEncode(String message) {
+    public String enEncode(String message, String key) {
         return defaultEncode(message);
     }
 

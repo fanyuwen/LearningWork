@@ -34,31 +34,3 @@ public class JavaClassLoader extends FatherLoader {
         //樊 1 2 6 7 11 3 4 5 12 8 9 10 12
     }
 }
-
-class FatherLoader {
-    static int initNUM(int num) {
-        System.out.println(num);
-        return num;
-    }
-
-    private static int f_static_age = initNUM(1);
-
-    static {
-        System.out.println(2);
-    }
-
-    private int f_dynamic_age = initNUM(3);
-
-    {
-        System.out.println(4);
-    }
-
-    void show(){
-        System.out.println("13");
-    }
-
-    FatherLoader() {
-        System.out.println(5);
-        show();
-    }
-}

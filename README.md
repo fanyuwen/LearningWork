@@ -9,13 +9,17 @@ This project is mainly a summary of the problems encountered in the work and the
 ##### The following open source frameworks are involved (创建完模块之后记得更新一下列表,序号要写对啊!):
 
 1. **spring** v:*5.1.7*.RELEASE
-2. **spring boot**
-3. **mybatis** v:*3.5.1*
-4. **shiro** v:*1.4.1*
-5. **netty**
-6. **MQ** (kafka)(activeMQ)
-7. **redis** v:*(jedis)2.10.2*
-8. **follow-up(只要是你感兴趣上面又没有列出来的,可以自己创建或者提出来)...**
+2. **springMVC** v:*5.1.7*.RELEASE
+3. **spring boot1** v:*1.5.21*.RELEASE
+4. **spring boot2(java8/spring5)** v:*2.1.5*.RELEASE
+5. **spring boot1 activemq** v:*1.5.21*.RELEASE
+6. **spring boot2 activemq** v:*2.1.5*.RELEASE
+7. **mybatis** v:*3.5.1*
+8. **shiro** v:*1.4.1*
+9. **netty**
+10. **MQ** (kafka)(activeMQ)
+11. **redis** v:*(jedis)2.10.2*
+12. **follow-up(只要是你感兴趣上面又没有列出来的,可以自己创建或者提出来)...**
 
 by *fanyuwen*
 
@@ -27,7 +31,8 @@ by *fanyuwen*
 5. 尊重他人的结果,要在获得别人的许可下才能修改别人的代码
 6. 项目整体已经按照父子模块的方式进行创建了,每一个学习的主题都是一个模块(尽量保证大主题一致),已创建的模块见**settings.gradle**文件,模块的约定包名以***com.learning***开始
 7. 要理清楚你构建的模块的依赖关系(util模块特殊,只能成为总依赖源,不能依赖任何其他第三方)
-8. 待定...
+8. 要非常小心不同版本的依赖的关系,很多模块只是版本不一样,依赖这些模块的时候一定要保证不能都依赖了,不然会导致依赖冲突
+9. 待定...
 
 ### 学习清单:
 1. [markdown](http://www.markdown.cn/)语法(学完之后也可以直接编辑本文件,把自己想写的,想说的写上去,或者修改整体的格式,只要不删减内容都行...)  --fanyuwen

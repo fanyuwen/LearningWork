@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'com.fanyuwen'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //依赖Springboot2
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: "$SpringBoot2Version"
+    //依赖SpringBootTest2
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: "$SpringBoot2Version"
+}

@@ -58,7 +58,7 @@ public class Int {
         int hex = 0x12;
         //八进制表示(容易与十进制混淆)
         int octal = 017;
-        //二进制表示(jdk新增)
+        //二进制表示(jdk1.7新增)
         int binary = 0b01110101;
         System.out.println("hex: " + hex);
         System.out.println("octal: " + octal);

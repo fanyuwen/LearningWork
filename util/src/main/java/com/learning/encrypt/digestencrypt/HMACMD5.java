@@ -1,4 +1,4 @@
-package com.learning.encrypt.hmac;
+package com.learning.encrypt.digestencrypt;
 
 import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;

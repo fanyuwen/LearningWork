@@ -1,6 +1,6 @@
-package com.learning.encrypt.sha;
+package com.learning.encrypt.digestencrypt;
 
-import com.learning.encrypt.Encrypt;
+import com.learning.encrypt.digestencrypt.DigestEncrypt;
 
 import java.nio.charset.Charset;
 
@@ -28,7 +28,7 @@ import java.nio.charset.Charset;
  * <p>
  * MAC （信息认证代码）就是一个散列结果，其中部分输入信息是密码，只有知道这个密码的参与者才能再次计算和验证MAC码的合法性。
  */
-public class SHA extends Encrypt {
+public class SHA extends DigestEncrypt {
     private static final String SHA = "SHA";
 
     public SHA(){}

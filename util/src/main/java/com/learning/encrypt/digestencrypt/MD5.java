@@ -1,6 +1,6 @@
-package com.learning.encrypt.md5;
+package com.learning.encrypt.digestencrypt;
 
-import com.learning.encrypt.Encrypt;
+import com.learning.encrypt.digestencrypt.DigestEncrypt;
 
 import java.nio.charset.Charset;
 
@@ -26,7 +26,7 @@ import java.nio.charset.Charset;
  * 直到满足上面的条件时才停止用0对信息的填充。然后，在这个结果后面附加一个以64位二进制表示的填充前信息长度。经过这两步的处理，信息的位长=N*512+448+64=(N+1）*512，即长度恰好是512的整数倍。
  * 这样做的原因是为满足后面处理中对信息长度的要求。
  */
-public class MD5 extends Encrypt {
+public class MD5 extends DigestEncrypt {
     private static final String MD5 = "MD5";
 
     public MD5() {

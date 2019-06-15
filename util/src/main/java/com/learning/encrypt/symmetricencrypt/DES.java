@@ -1,4 +1,4 @@
-package com.learning.encrypt.des;
+package com.learning.encrypt.symmetricencrypt;
 
 import javax.crypto.*;
 import javax.crypto.spec.DESKeySpec;

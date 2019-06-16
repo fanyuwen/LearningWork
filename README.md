@@ -4,7 +4,7 @@ This project is mainly a summary of the problems encountered in the work and the
 
 ##### The project build by *gradle* v*5.4.1*
 ###### base on jdk 1.8
-#####统一字符编码为 UTF-8
+##### 统一字符编码为 *UTF-8*
 
 ##### The following open source frameworks are involved (创建完模块之后记得更新一下列表,序号要写对啊!):
 

@@ -38,6 +38,13 @@ public abstract class SymmetricEncrypt {
     abstract String algorithmName();
 
     /**
+     * 密钥对齐方式
+     *
+     * @return
+     */
+    abstract String cipherAlgorithmName();
+
+    /**
      * 输出到的指定的父目录
      *
      * @return 父目录路径
@@ -151,7 +158,7 @@ public abstract class SymmetricEncrypt {
      */
     public boolean persistenceKey() {
         Path path = frompath();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(Files.newInputStream(path, StandardOpenOption.READ)));) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(Files.newInputStream(path, StandardOpenOption.READ)))) {
             String line;
             StringBuilder sb = new StringBuilder();
             while (StringUtils.isNotEmpty(line = br.readLine())) {
@@ -200,7 +207,7 @@ public abstract class SymmetricEncrypt {
     public String encrypt(String origin) {
         Key key = getKey();
         try {
-            Cipher cipher = Cipher.getInstance(algorithmName());
+            Cipher cipher = Cipher.getInstance(cipherAlgorithmName());
             cipher.init(Cipher.ENCRYPT_MODE, key, new SecureRandom());
             return Base64.getEncoder().encodeToString(cipher.doFinal(origin.getBytes()));
         } catch (NoSuchAlgorithmException |
@@ -221,7 +228,7 @@ public abstract class SymmetricEncrypt {
     public String decrypt(String ciphertext) {
         Key key = getKey();
         try {
-            Cipher cipher = Cipher.getInstance(algorithmName());
+            Cipher cipher = Cipher.getInstance(cipherAlgorithmName());
             cipher.init(Cipher.DECRYPT_MODE, key);
             return new String(cipher.doFinal(Base64.getDecoder().decode(ciphertext)));
         } catch (NoSuchAlgorithmException |

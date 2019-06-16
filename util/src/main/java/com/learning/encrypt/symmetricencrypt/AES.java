@@ -21,6 +21,11 @@ public class AES extends SymmetricEncrypt {
     }
 
     @Override
+    String cipherAlgorithmName() {
+        return ENCRYMODE;
+    }
+
+    @Override
     Key getKey(byte[] encoded) {
         return new SecretKeySpec(encoded, ALGORITHM);
     }

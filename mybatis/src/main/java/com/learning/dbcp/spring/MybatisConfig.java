@@ -64,8 +64,9 @@ public class MybatisConfig {
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName(driverClassName);
         basicDataSource.setUrl(url);
-        basicDataSource.setUsername(DES.decrypt(username));
-        basicDataSource.setPassword(DES.decrypt(password));
+        DES des = new DES(true);
+        basicDataSource.setUsername(des.decrypt(username));
+        basicDataSource.setPassword(des.decrypt(password));
         basicDataSource.setInitialSize(initsize);
         basicDataSource.setMaxTotal(maxtotal);
         basicDataSource.setMaxIdle(maxidle);

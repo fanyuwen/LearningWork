@@ -7,7 +7,7 @@ package com.learning.java8.lambda;
  * @author pujing
  * @date 2019/6/14 15:31
  */
-public class Demo {
+public class Lambda {
 
     /*
       Lambda 的基本语法：

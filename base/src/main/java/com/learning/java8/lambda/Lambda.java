@@ -7,6 +7,7 @@ import java.util.function.Consumer;
  * Lambda 表达式可以简洁地理解为：可传递的匿名函数的一种方式：它没有名称，但是它有参数列表，函数主体，返回类型，可以抛出异常列表。
  *
  * @author pujing
+ * @author fanyuwen
  * @date 2019/6/14 15:31
  */
 public class Lambda {
@@ -50,7 +51,7 @@ public class Lambda {
         process(() -> System.out.println("hello world 3!"));
     }
 
-
+    //成员属性
     private String name;
 
     /**
@@ -83,6 +84,9 @@ public class Lambda {
 
     }
 
+    /**
+     * 成员方法
+     */
     private void show() {
         System.out.println("Lambda this expression");
     }

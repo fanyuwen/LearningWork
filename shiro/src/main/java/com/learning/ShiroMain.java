@@ -8,5 +8,4 @@ package com.learning;
  * https://www.cnblogs.com/learnhow/p/5694876.html
  */
 public class ShiroMain {
-
 }

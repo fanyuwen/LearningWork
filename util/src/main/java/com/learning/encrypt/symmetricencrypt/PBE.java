@@ -13,8 +13,10 @@ import java.util.Base64;
  * 基于口令的对称加密算法（它其实是对之前的算法的包装，比如说MD5和DES，我这里就是的是对MD5和DES包装的PBE算法，
  * 还有其他类型的PBE），口令就是我们俗话说的密码，PBE中有一个salt（盐）的概念，盐就是干扰码
  */
-public class PBE {
+public class PBE extends SymmetricEncrypt {
     private static final String ALGORITHM = "PBEWITHMD5andDES";
+
+    //    private static final String PASSWORD = "lynu";//口令
 
     private static final int SEEDLEN = 8;
 
@@ -26,9 +28,29 @@ public class PBE {
         SALT = random.generateSeed(SEEDLEN);
     }
 
-    private static final String PASSWORD = "lynu";//口令
+    private String password;
 
-    public Key generateKey(String password) {
+    public PBE(boolean isDefault, String password) {
+        super(isDefault);
+        this.password = password;
+    }
+
+    @Override
+    String algorithmName() {
+        return ALGORITHM;
+    }
+
+    @Override
+    String cipherAlgorithmName() {
+        return "";
+    }
+
+    @Override
+    Key getKey(byte[] encoded) {
+        return generateKey(password);
+    }
+
+    Key generateKey(String password) {
         //口令和密钥
         PBEKeySpec pbeKeySpec = new PBEKeySpec(password.toCharArray());
         try {
@@ -41,12 +63,12 @@ public class PBE {
 
     /**
      * 加密实现
+     *
      * @param value 待加密字符串
-     * @param keyStr 加密键
      * @return 加密之后的字符串
      */
-    public String encrypt(String value, String keyStr) {
-        Key key = generateKey(keyStr);
+    public String encrypt(String value) {
+        Key key = generateKey(password);
         //参数规范，第一个参数是盐,第二个是迭代次数(经过散列函数多次迭代)
         PBEParameterSpec pbeParameterSpec = new PBEParameterSpec(SALT, 100);
         try {
@@ -65,12 +87,12 @@ public class PBE {
 
     /**
      * 解密实现
+     *
      * @param data 待解密字符串
-     * @param keyStr 加密键
      * @return 解密之后还原的字符串
      */
-    public String decrypt(String data, String keyStr) {
-        Key key = generateKey(keyStr);
+    public String decrypt(String data) {
+        Key key = generateKey(password);
         PBEParameterSpec pbeParameterSpec = new PBEParameterSpec(SALT, 100);
         try {
             Cipher cipher = Cipher.getInstance(ALGORITHM);

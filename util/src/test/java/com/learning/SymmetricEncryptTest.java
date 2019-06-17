@@ -2,6 +2,7 @@ package com.learning;
 
 import com.learning.encrypt.symmetricencrypt.AES;
 import com.learning.encrypt.symmetricencrypt.DES;
+import com.learning.encrypt.symmetricencrypt.PBE;
 import com.learning.encrypt.symmetricencrypt.THREEDES;
 import org.junit.Assert;
 import org.junit.Test;
@@ -38,6 +39,15 @@ public class SymmetricEncryptTest {
         String encode = threedes.encrypt(decode);
         System.out.println("encode: " + encode);
         Assert.assertEquals(threedes.decrypt(encode), decode);
+    }
+
+    @Test
+    public void pbetest() {
+        PBE pbe = new PBE(true, "lynu");
+        String decode = "bairenjie";
+        String encode = pbe.encrypt(decode);
+        System.out.println(encode);
+        Assert.assertEquals(pbe.decrypt(encode), decode);
     }
 
 }

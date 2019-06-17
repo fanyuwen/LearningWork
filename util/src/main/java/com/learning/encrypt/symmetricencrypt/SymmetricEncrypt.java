@@ -112,6 +112,15 @@ public abstract class SymmetricEncrypt {
     }
 
     /**
+     * 生成对称秘钥key
+     *
+     * @return 秘钥的key
+     */
+    public String key() {
+        return persistenceKey();
+    }
+
+    /**
      * 生成随机的key
      *
      * @return key字符串
@@ -156,7 +165,7 @@ public abstract class SymmetricEncrypt {
      *
      * @return true
      */
-    public boolean persistenceKey() {
+    public String persistenceKey() {
         Path path = frompath();
         try (BufferedReader br = new BufferedReader(new InputStreamReader(Files.newInputStream(path, StandardOpenOption.READ)))) {
             String line;
@@ -170,13 +179,13 @@ public abstract class SymmetricEncrypt {
                 String key = keyGenerator();
                 sb.append(algorithmName()).append(":").append(key);
                 pw.println(sb.toString());
+                return key;
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return true;
     }
 
     /**
@@ -238,10 +247,5 @@ public abstract class SymmetricEncrypt {
                 NoSuchPaddingException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static void main(String[] args) {
-        byte c = (byte)0b0000_0111;
-        System.out.println(c);
     }
 }

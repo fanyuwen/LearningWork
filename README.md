@@ -5,6 +5,8 @@ This project is mainly a summary of the problems encountered in the work and the
 ##### The project build by *gradle* v*5.4.1*
 ###### base on jdk 1.8
 ##### 统一字符编码为 *UTF-8*
+###### _注：gradle编译若出现：Cause: org.jetbrains.plugins.gradle.tooling.util.ModuleComponentIdentifierImpl.getModuleIdentifier()。_
+###### _是由于gradle与idea版本冲突导致的，建议下载低版本的gradle或idea。令：低版本的gradle与高版本java不兼容，eg:grade4.6与java11不兼容。_
 
 ##### The following open source frameworks are involved (创建完模块之后记得更新一下列表,序号要写对啊!):
 
@@ -29,7 +31,7 @@ by *fanyuwen*
 3. 提交的comment必须表述详细
 4. 提交之前要经过严格测试,保证代码质量
 5. 尊重他人的结果,要在获得别人的许可下才能修改别人的代码
-6. 项目整体已经按照父子模块的方式进行创建了,每一个学习的主题都是一个模块(尽量保证大主题一致),已创建的模块见**settings.gradle**文件,模块的约定包名以***com.learning***开始
+6. 项目整体已经按照父子模块的方式进行创建了,每一个学习的主题都是一个模块(尽量保证大主题一致),已创建的模块见****文件,模块的约定包名以***com.learning***开始
 7. 要理清楚你构建的模块的依赖关系(util模块特殊,只能成为总依赖源,不能依赖任何其他第三方)
 8. 要非常小心不同版本的依赖的关系,很多模块只是版本不一样,依赖这些模块的时候一定要保证不能都依赖了,不然会导致依赖冲突
 9. 以后代码测试尽量通过junit单元测试的方式实现

@@ -2,6 +2,13 @@ package com.learning.datatype;
 
 /**
  * @author fanyuwen
+ * @date 2019/06/17 10:57
+ * 程序员客栈 https://www.proginn.com/
+ * Coding 码市 https://codemart.com/
+ * 开源中国众包平台 https://zb.oschina.net/
+ * 码易 https://www.mayigeek.com/
+ * 人人开发 http://www.rrkf.com/(链接不安全)
+ * 开发邦 https://www.kaifabang.com/
  */
 public class Int {
     /**

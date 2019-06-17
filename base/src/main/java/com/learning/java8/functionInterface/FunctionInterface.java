@@ -1,6 +1,5 @@
 package com.learning.java8.functionInterface;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

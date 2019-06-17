@@ -37,5 +37,5 @@ by *fanyuwen*
 
 ### 学习清单:
 1. [markdown](http://www.markdown.cn/)语法(学完之后也可以直接编辑本文件,把自己想写的,想说的写上去,或者修改整体的格式,只要不删减内容都行...)  --fanyuwen
-2. [gradle](https://gradle.org/)学习 [下载指定版本](https://gradle.org/releases/) 下拉找到指定的版本下载(建议下载binary-only)  --fanyuwen
+2. [w3cGradle学习教程](https://www.w3cschool.cn/gradle/) [gradle官网](https://gradle.org/) [下载指定版本](https://gradle.org/releases/) 下拉找到指定的版本下载(建议下载binary-only)  --fanyuwen
 3. (你想学的技术都能在这里写)未完待续...

@@ -47,7 +47,7 @@ public class ArrayUtils {
 
     private static <T> boolean judgeArray(T[] array, EmptyLogic emptyLogic) {
         if (array == null || array.length == 0) {
-            return emptyLogic.condition;
+            return emptyLogic.empty();
         }
         for (T ele : array) {
             if (emptyLogic.check(ele instanceof String ?
@@ -67,14 +67,16 @@ public class ArrayUtils {
      * {@see 参考java.util.stream.MatchOps.MatchKind枚举实现, 感兴趣的同时可以去观摩大师写的jdk的源码}
      */
     private enum EmptyLogic {
-        ALL(true, false), ANY(false, true), NONE(false, false);
+        ALL(true, false, true), ANY(false, true, true), NONE(false, false, false);
         private boolean condition;
         private boolean result;
+        private boolean isEmpty;
 
-        EmptyLogic(boolean noEmptyCondition, boolean result) {
+        EmptyLogic(boolean noEmptyCondition, boolean result, boolean isEmpty) {
             //约定noEmptyCondition参数代表 对象非空为true,空(字符串 "",null)为false
             this.condition = noEmptyCondition;
             this.result = result;
+            this.isEmpty = isEmpty;
         }
 
         boolean check(boolean expression) {
@@ -83,6 +85,10 @@ public class ArrayUtils {
 
         boolean result() {
             return result;
+        }
+
+        boolean empty() {
+            return isEmpty;
         }
     }
 

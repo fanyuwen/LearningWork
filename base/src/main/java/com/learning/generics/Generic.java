@@ -6,6 +6,15 @@ package com.learning.generics;
  */
 public class Generic<T> {
 
+    //通配符 PECS (Product(生产)(方法返回用 Extends)) (Consumer(消费)(方法参数用 Super))
+    void pecs() {
+        //因为是extends 所以只能调用生产方法
+        B<? extends String> eb = new B<>();
+        eb.get();
+        //因为是super 所以只能调用消费方法
+        B<? super String> sb = new B<>();
+        sb.set("13123");
+    }
 }
 
 /**
@@ -45,11 +54,11 @@ class B<T> {
         param.set(newValue);
     }
 
-    private T get() {
+    T get() {
         return value;
     }
 
-    private void set(T value) {
+    void set(T value) {
         this.value = value;
     }
 }

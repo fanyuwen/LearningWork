@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'war'
 }
 
 group 'com.fanyuwen'
@@ -16,4 +17,6 @@ dependencies {
     //spring-web/mvc
     compile group: 'org.springframework', name: 'spring-web', version: "$SpringVersion"
     compile group: 'org.springframework', name: 'spring-webmvc', version: "$SpringVersion"
+
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$JavaxServletApiVersion"
 }

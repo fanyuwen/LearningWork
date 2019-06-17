@@ -35,6 +35,7 @@ allprojects {
         JedisVersion = "2.10.2"
         SpringDataRedisVersion = "2.1.8.RELEASE"
         SpringSessionDataRedisVersion = "2.1.6.RELEASE"
+        JavaxServletApiVersion = "4.0.1"
     }
     
     dependencies {

@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'war'
 }
 
 group 'com.fanyuwen'
@@ -16,6 +17,10 @@ dependencies {
     compile group: 'org.apache.shiro', name: 'shiro-core', version: "$ShiroCoreVersion"
     //shiro-web
     compile group: 'org.apache.shiro', name: 'shiro-web', version: "$ShiroCoreVersion"
-    //spring
+    //spring-shiro
+    compile group: 'org.apache.shiro', name: 'shiro-spring', version: "$ShiroCoreVersion"
+    //spring mybatis util
     compile project(":mybatis")
+    //spring mvc
+    compile project(":springMVC")
 }

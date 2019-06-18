@@ -11,7 +11,6 @@ import java.io.File;
 /**
  * @author fanyuwen
  * @date 2019/6/17 1:01
- * http://www.javafxchina.net/blog/docs/
  * https://www.yiibai.com/javafx/javafx-tutorial-for-beginners.html
  */
 public class Main extends Application {

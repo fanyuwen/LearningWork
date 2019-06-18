@@ -11,4 +11,6 @@ include 'springboot1' //spring boot 1
 include 'springboot2' //spring boot 2
 include 'springboot1activemq'//spring boot 1 activemq
 include 'springboot2activemq'//spring boot 2 activemq
-
+include 'springcloud1'
+include 'springcloud2'
+include 'springcloud1:springcloudeureka'

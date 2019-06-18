@@ -51,7 +51,7 @@ public class FunctionInterface {
         void accept(T param);
 
         /**
-         * 接口可以实名默认的方法,不属于抽象方法实现标准,所以经过FunctionalInterface注解校验检查
+         * 接口可以使用默认的方法(public),不属于抽象方法实现标准,所以经过FunctionalInterface注解校验检查
          *
          * @param param 方法入参
          */
@@ -70,7 +70,7 @@ public class FunctionInterface {
         boolean test(T param);
 
         /**
-         * 接口可是声明静态方法,不属于抽象方法实现标准,所以经过FunctionalInterface注解校验检查
+         * 接口可以声明静态方法(public),不属于抽象方法实现标准,所以经过FunctionalInterface注解校验检查
          *
          * @param param 方法入参
          * @param <T>   入参泛型类型

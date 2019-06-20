@@ -14,9 +14,11 @@ repositories {
 
 dependencies {
     compile project(':spring')
-    //spring-web/mvc
+    //spring-web-mvc
     compile group: 'org.springframework', name: 'spring-web', version: "$SpringVersion"
     compile group: 'org.springframework', name: 'spring-webmvc', version: "$SpringVersion"
+    //spring-test
+    testCompile group: 'org.springframework', name: 'spring-test', version: "$SpringVersion"
 
     providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: "$JavaxServletApiVersion"
 }

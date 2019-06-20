@@ -2,6 +2,7 @@ package com.learning.web;
 
 import com.learning.shiro.bean.Spittle;
 import com.learning.shiro.controller.HomeController;
+import com.learning.shiro.controller.SpitterController;
 import com.learning.shiro.controller.SpittleController;
 import com.learning.shiro.repository.SpittleRepository;
 import org.junit.Test;
@@ -86,6 +87,15 @@ public class ShiroWebTest {
                 .andExpect(view().name("spittle"))
                 .andExpect(model().attributeExists("spittle"))
                 .andExpect(model().attribute("spittle", expectedSpittle));
+    }
+
+    @Test
+    public void shouldShowRegistration() throws Exception {
+        SpitterController spitterController = new SpitterController();
+        MockMvc mockMvc = standaloneSetup(spitterController).build();
+
+        mockMvc.perform(get("/spitter/register"))
+                .andExpect(view().name("registerForm"));
     }
 
     private List<Spittle> createSpittleList(int count) {

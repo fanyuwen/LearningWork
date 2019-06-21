@@ -20,33 +20,33 @@ public class ShiroBaseTest {
 
     @Test
     public void testBaseFunction() {
-        //1¡¢»ñÈ¡SecurityManager Environment¹¤³§£¬´Ë´¦Ê¹ÓÃIniÅäÖÃÎÄ¼ş³õÊ¼»¯SecurityManager
+        //1ã€è·å–SecurityManager Environmentå·¥å‚ï¼Œæ­¤å¤„ä½¿ç”¨Inié…ç½®æ–‡ä»¶åˆå§‹åŒ–SecurityManager
         IniWebEnvironment environment = new IniWebEnvironment();
         environment.setIni(Ini.fromResourcePath("classpath:shiro.ini"));
-        environment.init();//environment³õÊ¼»¯
+        environment.init();//environmentåˆå§‹åŒ–
 
-        //µÃµ½SecurityManagerÊµÀı ²¢°ó¶¨¸øSecurityUtils
+        //å¾—åˆ°SecurityManagerå®ä¾‹ å¹¶ç»‘å®šç»™SecurityUtils
         SecurityManager securityManager = environment.getSecurityManager();
         SecurityUtils.setSecurityManager(securityManager);
 
-        //3¡¢µÃµ½Subject¼°´´½¨ÓÃ»§Ãû/ÃÜÂëÉí·İÑéÖ¤Token(¼´ÓÃ»§Éí·İ/Æ¾Ö¤)
+        //3ã€å¾—åˆ°SubjectåŠåˆ›å»ºç”¨æˆ·å/å¯†ç èº«ä»½éªŒè¯Token(å³ç”¨æˆ·èº«ä»½/å‡­è¯)
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken("zhang", "1234");
         try {
-        //4¡¢µÇÂ¼£¬¼´Éí·İÑéÖ¤
-        subject.login(token);
+            //4ã€ç™»å½•ï¼Œå³èº«ä»½éªŒè¯
+            subject.login(token);
         } catch (AuthenticationException e) {
-        //5¡¢Éí·İÑéÖ¤Ê§°Ü
+            //5ã€èº«ä»½éªŒè¯å¤±è´¥
         }
-        Assert.assertTrue(subject.isAuthenticated()); //¶ÏÑÔÓÃ»§ÒÑ¾­µÇÂ¼
+        Assert.assertTrue(subject.isAuthenticated()); //æ–­è¨€ç”¨æˆ·å·²ç»ç™»å½•
 
-        //6¡¢ÍË³ö
+        //6ã€é€€å‡º
         subject.logout();
     }
 
     @After
     public void tearDown() throws Exception {
-        //ÍË³öÊ±½â³ı°ó¶¨Subjectµ½Ïß³Ì ·ñÔò¶ÔÏÂ´Î²âÊÔÔì³ÉÓ°Ïì
+        //é€€å‡ºæ—¶è§£é™¤ç»‘å®šSubjectåˆ°çº¿ç¨‹ å¦åˆ™å¯¹ä¸‹æ¬¡æµ‹è¯•é€ æˆå½±å“
         ThreadContext.unbindSubject();
     }
 

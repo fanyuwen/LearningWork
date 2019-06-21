@@ -9,16 +9,16 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import javax.servlet.ServletContainerInitializer;
 
 /**
- * servlet3.0 ĞÂÔöÌØĞÔ(web.xmlÎÄ¼şÅäÖÃµÄÌæ´ú·½°¸,¸æ±ğweb.xmlÅäÖÃµÄ·½Ê½)
+ * servlet3.0 æ–°å¢ç‰¹æ€§(web.xmlæ–‡ä»¶é…ç½®çš„æ›¿ä»£æ–¹æ¡ˆ,å‘Šåˆ«web.xmlé…ç½®çš„æ–¹å¼)
  *
  * @author yuwen.fan
  * @date 2019/6/19 15:24
  * https://www.cnblogs.com/frankyou/p/6888566.html
- * @see ServletContainerInitializer Í¨¹ıÊµÏÖ¸Ã½Ó¿Ú,servletÈİÆ÷ÄÜ¹»É¨Ãèµ½²¢½øĞĞÏàÓ¦µÄ³õÊ¼»¯
- * @see SpringServletContainerInitializer springÌá¹©ÁËÊµÏÖ¸Ã½Ó¿ÚµÄÊµÏÖ
- * Ëü»áÔÙÈ¥É¨ÃèÑ°ÕÒÊµÏÖÁË{@link WebApplicationInitializer}½Ó¿ÚµÄÊµÏÖ,²¢µ÷ÓÃËüµÄonStartup·½·¨
- * ½øĞĞservlet³õÊ¼»¯
- * @see AbstractAnnotationConfigDispatcherServletInitializer springÌá¹©µÄ±ã½İµÄÀà(implements WebApplicationInitializer),ÓÃÓÚ³õÊ¼»¯Servlet
+ * @see ServletContainerInitializer é€šè¿‡å®ç°è¯¥æ¥å£,servletå®¹å™¨èƒ½å¤Ÿæ‰«æåˆ°å¹¶è¿›è¡Œç›¸åº”çš„åˆå§‹åŒ–
+ * @see SpringServletContainerInitializer springæä¾›äº†å®ç°è¯¥æ¥å£çš„å®ç°
+ * å®ƒä¼šå†å»æ‰«æå¯»æ‰¾å®ç°äº†{@link WebApplicationInitializer}æ¥å£çš„å®ç°,å¹¶è°ƒç”¨å®ƒçš„onStartupæ–¹æ³•
+ * è¿›è¡Œservletåˆå§‹åŒ–
+ * @see AbstractAnnotationConfigDispatcherServletInitializer springæä¾›çš„ä¾¿æ·çš„ç±»(implements WebApplicationInitializer),ç”¨äºåˆå§‹åŒ–Servlet
  */
 public class ShiroWebWebApplictaionInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

@@ -6,7 +6,7 @@ import org.springframework.web.SpringServletContainerInitializer;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.ServletContainerInitializer;
+import javax.servlet.*;
 
 /**
  * servlet3.0 新增特性(web.xml文件配置的替代方案,告别web.xml配置的方式)
@@ -35,5 +35,24 @@ public class ShiroWebWebApplictaionInitializer extends AbstractAnnotationConfigD
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
+    }
+
+    /**
+     * 为dispatcherServlet注册filter
+     */
+    @Override
+    protected Filter[] getServletFilters() {
+        return super.getServletFilters();
+    }
+
+    @Override
+    protected void registerContextLoaderListener(ServletContext servletContext) {
+        super.registerContextLoaderListener(servletContext);
+    }
+
+    @Override
+    protected void customizeRegistration(ServletRegistration.Dynamic registration) {
+        super.customizeRegistration(registration);
+        registration.setMultipartConfig(new MultipartConfigElement("/tmp/spittr/uploads"));
     }
 }

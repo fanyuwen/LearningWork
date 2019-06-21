@@ -31,6 +31,9 @@ dependencies {
     testCompile group: 'org.mockito', name: 'mockito-core', version: "$MockitoCoreVersion"
     //hamcrest
     testCompile group: 'org.hamcrest', name: 'hamcrest', version: "$HamcrestVersion"
+    //validation
+    compile group: 'javax.validation', name: 'validation-api', version: "$JavaValidationVersion"
+
     //spring mybatis util
     compile project(":mybatis")
     //spring mvc

@@ -46,6 +46,8 @@ allprojects {
         MockitoCoreVersion = "2.23.4"
         //hamcrest
         HamcrestVersion = "2.1"
+        //validation
+        JavaValidationVersion = "2.0.1.Final"
     }
 
     dependencies {

@@ -5,11 +5,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+import java.io.IOException;
 
 /**
  * @author yuwen.fan
@@ -22,9 +26,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 })
 public class WebConfig implements WebMvcConfigurer {
     /**
-     * ÅäÖÃjspÊÓÍ¼½âÎöÆ÷
+     * é…ç½®jspè§†å›¾è§£æå™¨
      *
-     * @return ÊÓÍ¼½âÎöÆ÷
+     * @return è§†å›¾è§£æå™¨
      */
     @Bean
     public ViewResolver viewResolver() {
@@ -36,12 +40,17 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     /**
-     * ÅäÖÃ¾²Ì¬×ÊÔ´´¦Àí
+     * é…ç½®é™æ€èµ„æºå¤„ç†
      *
-     * @param configurer Ä¬ÈÏµÄServlet Handler´¦Àí
+     * @param configurer é»˜è®¤çš„Servlet Handlerå¤„ç†
      */
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
+    }
+
+    @Bean
+    public MultipartResolver multipartResolver() throws IOException {
+        return new StandardServletMultipartResolver();
     }
 }

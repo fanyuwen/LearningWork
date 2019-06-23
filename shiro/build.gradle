@@ -19,7 +19,7 @@ dependencies {
     compile group: 'org.apache.shiro', name: 'shiro-web', version: "$ShiroCoreVersion"
     //spring-shiro
     compile group: 'org.apache.shiro', name: 'shiro-spring', version: "$ShiroCoreVersion"
-    //shiro-ehcache (ª∫¥Êπ‹¿Ì)
+    //shiro-ehcache (ÁºìÂ≠òÁÆ°ÁêÜ)
     compile group: 'org.apache.shiro', name: 'shiro-ehcache', version: "$ShiroCoreVersion"
     //jstl implementation
     compile group: 'org.apache.taglibs', name: 'taglibs-standard-impl', version: "$ServletJSTLVersion"

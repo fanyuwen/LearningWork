@@ -1,7 +1,17 @@
+buildscript {
+    dependencies {
+        classpath 'de.dynamicfiles.projects.gradle.plugins:javafx-gradle-plugin:8.8.2'
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+
 plugins {
     id 'java'
-    id 'javafx-gradle-plugin'
 }
+
+apply plugin:'javafx-gradle-plugin'
 
 group 'com.fanyuwen'
 version '0.0.1-SNAPSHOT'
@@ -18,6 +28,6 @@ dependencies {
 
 jfx {
     appName = "MyAPP"
-    mainClass = "com.javafx.test.MyApplication"
+    mainClass = "com.javafx.test.Main"
     vendor="yanhucheng"
 }

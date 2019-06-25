@@ -46,5 +46,9 @@ public class StrBuilder {
         System.out.println(sb.length());//4
         sb.setLength(2);
         System.out.println(sb.length());//2
+
+        sb.append("1").append("2").append("3");
+
+        System.out.println(sb.toString());//12123
     }
 }

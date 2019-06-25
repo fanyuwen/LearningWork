@@ -13,6 +13,8 @@ repositories {
 
 dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-activemq', version: "$SpringBoot1Version"
-    
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "$SpringBoot1Version"
+
     compile project(':springboot1')
 }

@@ -16,7 +16,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import java.io.IOException;
 
 /**
- * @author yuwen.fan
+ * @author fanyuwen
  * @date 2019/6/19 18:13
  */
 @Configuration

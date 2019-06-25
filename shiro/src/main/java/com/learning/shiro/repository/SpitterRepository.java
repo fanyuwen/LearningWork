@@ -4,7 +4,7 @@ import com.learning.shiro.bean.Spitter;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author yuwen.fan
+ * @author fanyuwen
  * @date 2019/6/21 9:54
  */
 @Repository

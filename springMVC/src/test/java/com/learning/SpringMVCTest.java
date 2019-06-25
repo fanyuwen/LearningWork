@@ -1,7 +1,7 @@
 package com.learning;
 
 /**
- * @author yuwen.fan
+ * @author fanyuwen
  * @date 2019/6/20 9:50
  */
 public class SpringMVCTest {

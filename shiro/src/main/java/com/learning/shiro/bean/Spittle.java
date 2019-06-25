@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * @author yuwen.fan
+ * @author fanyuwen
  * @date 2019/6/20 11:43
  */
 public class Spittle {

@@ -1,7 +1,7 @@
 package com.learning.coreapi.lang;
 
 /**
- * @author yuwen.fan
+ * @author fanyuwen
  * @date 2019/6/24 14:18
  * 核心类java.lang.StringBuilder简介(非线程安全)
  */

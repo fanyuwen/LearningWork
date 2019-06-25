@@ -6,7 +6,7 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
 
 /**
- * @author yuwen.fan
+ * @author fanyuwen
  * @date 2019/6/19 18:13
  */
 @Configuration

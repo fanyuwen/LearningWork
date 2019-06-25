@@ -11,7 +11,7 @@ import javax.servlet.*;
 /**
  * servlet3.0 新增特性(web.xml文件配置的替代方案,告别web.xml配置的方式)
  *
- * @author yuwen.fan
+ * @author fanyuwen
  * @date 2019/6/19 15:24
  * https://www.cnblogs.com/frankyou/p/6888566.html
  * @see ServletContainerInitializer 通过实现该接口,servlet容器能够扫描到并进行相应的初始化

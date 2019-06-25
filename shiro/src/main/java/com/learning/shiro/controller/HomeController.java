@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * @author yuwen.fan
+ * @author fanyuwen
  * @date 2019/6/20 10:31
  */
 @Controller

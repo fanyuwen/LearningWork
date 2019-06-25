@@ -7,7 +7,7 @@ import com.learning.designpattern.factory.songwei.SongWeiFactory;
 import java.util.Arrays;
 
 /**
- * @author yuwen.fan
+ * @author fanyuwen
  * @date 2019/6/14 15:42
  * 工厂模式 main
  */

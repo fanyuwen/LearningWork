@@ -6,6 +6,7 @@ import org.springframework.jms.annotation.EnableJms;
 
 /**
  * @author fanyuwen
+ * @author bairenjie
  * @date 2019/6/16 1:42
  */
 @EnableJms

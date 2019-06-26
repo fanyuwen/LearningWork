@@ -9,3 +9,5 @@ spring:
   jms:
   #默认为false，若要使用发布订阅模式需要打开设置为true
     pub-sub-domain: false
+server:
+  port: 6206

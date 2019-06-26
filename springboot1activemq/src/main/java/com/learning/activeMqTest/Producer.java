@@ -1,5 +1,6 @@
 package com.learning.activeMqTest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Producer {
 
+    @Autowired
     private JmsTemplate jmsTemplate;
 
     @RequestMapping("/test/activeQueue")

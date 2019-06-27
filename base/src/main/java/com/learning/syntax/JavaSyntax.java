@@ -7,8 +7,8 @@ package com.learning.syntax;
 public class JavaSyntax {
 
     /**
-     * ÏÔÊ¾Ò»¸ö¸´ÔÓµÄ·½·¨µ÷ÓÃ±í´ïÊ½µÄÏÈºóË³Ğò
-     * ÌôÕ½Äã¶ÔjavaÓï·¨Ö´ĞĞË³ĞòµÄÁË½â
+     * æ–¹æ³•æ‰§è¡Œçš„å®Œæ•´æµç¨‹
+     * æ¶‰åŠjavaè¯­è¨€è¯­æ³•åˆ†æçš„è¿‡ç¨‹
      */
     static void showJavaSyntaxOrderOfMethodInvoke() {
         origin().first(generateFirstNum())

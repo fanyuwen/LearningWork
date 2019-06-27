@@ -7,24 +7,21 @@ import java.util.Arrays;
 
 /**
  * @author fanyuwen
- * @date 2019/6/27 1:28
- * 快速排序测试用例
+ * @date 2019/6/27 10:58
  */
-public class FastTest extends BaseArrayTest {
-
+public class BucketTest extends BaseArrayTest {
 
     @Test
-    public void testClassicsSort() {
-        Fast fast = new Fast();
+    public void testBucketSort() {
+        Bucket bucket = new Bucket();
         System.out.println("排序前: " + Arrays.toString(test_arrays));
         int[] temp_array = test_arrays.clone();
-        fast.variantSort(test_arrays);
+        bucket.bucketSort(test_arrays);
         Arrays.sort(temp_array);
         System.out.println("排序后: " + Arrays.toString(test_arrays));
         System.out.println("排序后: " + Arrays.toString(temp_array));
 
         Assert.assertArrayEquals(test_arrays, temp_array);
     }
-
 
 }

@@ -14,17 +14,19 @@ public class Bucket extends BaseSort {
     private static final int SCALE = 10,
             FILL_NUM = -1;
 
-    public static void bucketSort(int[] array) {
+    public void bucketSort(int[] array) {
         int digit = findMax(array);
         //桶排序关键(二维数组),第二维是根据每一位十进制数字去排序的
-        int[][] sortArray = initSortArray(array.length, null);
-        while (digit-- > 0) {
+        int i_i = 10;
+        int i_i_i = 1;
+        int high_digit = IntStream.rangeClosed(1, digit).map(i -> SCALE).reduce(1, (left, right) -> left * right);
+        while (i_i_i < high_digit) {
+            int[][] sortArray = initSortArray(array.length, null);
             //从最高位开始获取每一位的数字
-            int high_digit = IntStream.range(1, digit).map(i -> SCALE).reduce(1, (left, right) -> left * right);
-            //遍历数组获取每个元素的最高位
+            //遍历数组从最低位开始往高位遍历每一位的数
             for (int i = 0; i < array.length; i++) {
                 int ele = array[i];
-                int curr_digit = ele / high_digit;
+                int curr_digit = ele % i_i / i_i_i;
                 sortArray[i][curr_digit] = ele;
             }
             //反向遍历,从桶的第二维数字开始遍历
@@ -36,6 +38,9 @@ public class Bucket extends BaseSort {
                     }
                 }
             }
+            digit--;
+            i_i *= 10;
+            i_i_i *= 10;
         }
     }
 
@@ -47,11 +52,6 @@ public class Bucket extends BaseSort {
             Arrays.fill(array, FILL_NUM);
         }
         return sortArray;
-    }
-
-    public static void main(String[] args) {
-//        System.out.println(findMax(new int[]{899}));
-        bucketSort(new int[]{899});
     }
 
     /**

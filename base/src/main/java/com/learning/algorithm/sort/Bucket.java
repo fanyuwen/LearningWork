@@ -26,7 +26,7 @@ public class Bucket extends BaseSort {
             //遍历数组从最低位开始往高位遍历每一位的数
             for (int i = 0; i < array.length; i++) {
                 int ele = array[i];
-                int curr_digit = ele % i_i / i_i_i;
+                int curr_digit = ele % i_i / i_i_i;//另一种实现是将数字/每次*10(从1开始) % 10
                 sortArray[i][curr_digit] = ele;
             }
             //反向遍历,从桶的第二维数字开始遍历

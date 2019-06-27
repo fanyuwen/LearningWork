@@ -74,7 +74,7 @@ public class Fast extends BaseSort {
             //这是一个交换标准(默认选用start索引对应的那个数作为标准)
             int dual = array[start];
 
-            int first = start + 1,//头索引
+            int first = start,//头索引
                     last = end;//尾索引
 
             while (first < last) {

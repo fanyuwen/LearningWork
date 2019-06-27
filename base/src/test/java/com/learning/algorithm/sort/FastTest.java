@@ -18,13 +18,12 @@ public class FastTest extends BaseArrayTest {
         Fast fast = new Fast();
         System.out.println("排序前: " + Arrays.toString(test_arrays));
         int[] temp_array = test_arrays.clone();
-        fast.variantSort(test_arrays);
+        fast.classicsSort(test_arrays);
         Arrays.sort(temp_array);
         System.out.println("排序后: " + Arrays.toString(test_arrays));
         System.out.println("排序后: " + Arrays.toString(temp_array));
 
         Assert.assertArrayEquals(test_arrays, temp_array);
     }
-
 
 }

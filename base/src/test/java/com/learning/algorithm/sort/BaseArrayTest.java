@@ -15,7 +15,7 @@ public class BaseArrayTest {
 
     @Before
     public void fun() {
-        test_arrays = IntStream.rangeClosed(1, 100)
+        test_arrays = IntStream.rangeClosed(1, 20)
                 .map(i -> r.nextInt(1000))
                 .toArray();
 //        test_arrays = new int[]{4, 51, 25, 28, 65, 62, 66, 41, 33, 28};

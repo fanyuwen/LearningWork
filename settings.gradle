@@ -21,3 +21,8 @@ include 'springcloud1:swspringclouddemo:microservice-discovery-eureka'
 include 'springcloud1:swspringclouddemo:microservice-provider-user'
 include 'springcloud1:swspringclouddemo:microservice-simple-consumer-movie'
 include 'springcloud1:swspringclouddemo:microservice-simple-provider-user'
+
+//下面是我整理的工作中要解决的非spring cloud项目使用原生eureka client去连接Spring cloud eureka server
+include 'springcloud1:primaryimpl:primaryeurekaclient' //原生实现(直接使用netflix的eureka ribbon feign zuul)
+include 'springcloud1:primaryimpl:springcloudeurekaserver'//spring cloud eureka实现的eureka注册中心
+include 'springcloud1:primaryimpl:springcloudeurekaapplication'//spring cloud eureka实现的某个被调用的微服务

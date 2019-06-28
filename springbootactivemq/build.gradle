@@ -16,5 +16,7 @@ dependencies {
 
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "$SpringBoot1Version"
 
+    compile group: 'com.alibaba', name: 'fastjson', version: "1.2.47"
+
     compile project(':springboot1')
 }

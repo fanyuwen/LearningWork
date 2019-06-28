@@ -13,6 +13,7 @@ include 'springboot1activemq'//spring boot 1 activemq
 include 'springboot2activemq'//spring boot 2 activemq
 include 'springcloud1'
 include 'springcloud2'
+include 'dubbo' //dubbo
 
 //下面是 宋伟 的 spring cloud demo子模块
 include 'springcloud1:swspringclouddemo'

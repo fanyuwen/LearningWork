@@ -3,7 +3,7 @@ package com.learning.coreapi.util;
 /**
  * @author fanyuwen
  * @date 2019/6/25 10:04
- * @see java.util.Arrays Array¹¤¾ßÀàÊ¹ÓÃ·½Ê½
+ * @see java.util.Arrays Arrayå·¥å…·ç±»ä½¿ç”¨æ–¹å¼
  */
 public class FArray {
 

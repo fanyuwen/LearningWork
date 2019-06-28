@@ -9,6 +9,8 @@ import java.util.Random;
  */
 abstract class BaseSort {
 
+    BaseSort(){}
+
     /**
      * 校验int数组是否合法
      *

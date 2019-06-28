@@ -1,5 +1,8 @@
 package com.learning.activeMqTest;
 
+import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.ser.std.SerializableSerializer;
+import com.fasterxml.jackson.databind.util.JSONWrappedObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,7 +30,12 @@ public class Producer {
 
     @RequestMapping("/test/activeTopic")
     public String topicTest(@RequestBody String message){
-        jmsTemplate.convertAndSend("Topic-1",message);
+        Test test = new Test();
+        test.setAge(12);
+        test.setName("xiaoming");
+        test.setAddress("suzhou");
+        test.setSex(0);
+        jmsTemplate.convertAndSend("Topic-1", JSONObject.toJSONString(test));
         return "topic producer is ok";
     }
 }

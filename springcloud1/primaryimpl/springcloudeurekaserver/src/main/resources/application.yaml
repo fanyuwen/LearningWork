@@ -6,3 +6,5 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://localhost:8089/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 5

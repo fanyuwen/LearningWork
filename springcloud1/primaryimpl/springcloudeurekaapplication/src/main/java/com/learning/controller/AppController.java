@@ -1,6 +1,9 @@
 package com.learning.controller;
 
+import com.learning.bean.Message;
+import com.learning.bean.request.RestRequest;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,9 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class AppController {
 
-    @GetMapping("helloworld")
-    public String sayHelloWorld() {
-        return "Hello World";
+    @PostMapping("helloworld")
+    public Message sayHelloWorld(RestRequest<String> restRequest) {
+        return new Message("Hello World" + restRequest.getBody());
+    }
+
+    @GetMapping("helloworld1")
+    public Message sayHelloWorld() {
+        return new Message("hello world+++++");
     }
 
 }

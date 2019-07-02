@@ -26,3 +26,4 @@ include 'springcloud1:swspringclouddemo:microservice-simple-provider-user'
 include 'springcloud1:primaryimpl:primaryeurekaclient' //原生实现(直接使用netflix的eureka ribbon feign zuul)
 include 'springcloud1:primaryimpl:springcloudeurekaserver'//spring cloud eureka实现的eureka注册中心
 include 'springcloud1:primaryimpl:springcloudeurekaapplication'//spring cloud eureka实现的某个被调用的微服务
+include 'springcloud1:primaryimpl:myorigineurekaribbonfeign' //原生实现

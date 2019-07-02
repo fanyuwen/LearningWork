@@ -36,11 +36,15 @@ public class InnerClass {
 
     /**
      * 成员内部类,自动有一个对外围类的引用
-     * 不能创建静态属性(除非常量)
+     * 不能创建静态属性(除非常量,常量的意思是编译期就能确定的值,并不是static final修饰的属性就是常量)
      */
     class DynamicInner {
-        //        private final InnerClass InnerClass.this; 编译器自动生成,所以能够访问外围类的成员(属性,方法)
+        //private final InnerClass InnerClass.this; 编译器自动生成,所以能够访问外围类的成员(属性,方法)
         private String dynamicInnerName;
+
+        // static int num; 编译报错,成员内部类里面不能有静态属性
+        final static int num = 1;//编译成功,因为是常量(字面量赋值,编译期就能确定)
+        //final static int num1 = new int[]{1}[0];//编译报错,虽然是static final修饰但是实际的值需要运行期解析,不是常量
 
         /**
          * 可以直接访问外围对象的私有属性和方法
@@ -65,6 +69,7 @@ public class InnerClass {
      */
     static class StaticInner {
         private String staticInnerName;
+        static int num = 12;
 
         //静态属性
         static int staticInnerAge;
@@ -85,10 +90,14 @@ public class InnerClass {
     void dynamicLocalClass() {
         /*
          * 在非静态方法中声明的局部内部类可以直接访问外围类的属性
-         * 不能有静态成员(除非常量)
+         * 不能有静态成员(除非常量,常量的意思是编译期就能确定的值,并不是static final修饰的属性就是常量)
          */
         class LocalInnerClass {
             private String dynamicLocalInnerName;
+
+            // static int num; 编译报错,成员内部类里面不能有静态属性
+            final static int num = 1;//编译成功,因为是常量(字面量赋值,编译期就能确定)
+            //final static int num1 = new int[]{1}[0];//编译报错,虽然是static final修饰但是实际的值需要运行期解析,不是常量
 
             /**
              * 直接访问外围实例的属性
@@ -113,10 +122,14 @@ public class InnerClass {
     static void staticLocalClass() {
         /*
          * 静态方法中声明的局部内部类不能直接访问外围类的属性
-         * 不能有静态成员(除非常量)
+         * 不能有静态成员(除非常量,常量的意思是编译期就能确定的值,并不是static final修饰的属性就是常量)
          */
         class LocalInnerClass {
             private String staticLocalInnerName;
+
+            //static int num1;编译报错,成员内部类里面不能有静态属性
+            final static int num = 1;//编译成功,因为是常量(字面量赋值,编译期就能确定)
+            //final static int num1 = new int[]{1}[0];//编译报错,虽然是static final修饰但是实际的值需要运行期解析,不是常量
 
             /**
              * 可以访问任何外围实例参数的属性
@@ -136,6 +149,11 @@ public class InnerClass {
          * 在非静态方法中创建匿名内部类可以直接访问外围类的属性
          */
         InnerClass innerClass = new InnerClass() {
+
+            // static int num; 编译报错,成员内部类里面不能有静态属性
+            final static int num = 1;//编译成功,因为是常量(字面量赋值,编译期就能确定)
+            //final static int num1 = new int[]{1}[0];//编译报错,虽然是static final修饰但是实际的值需要运行期解析,不是常量
+
             /**
              * 直接访问外围实例的属性
              */
@@ -159,6 +177,11 @@ public class InnerClass {
      */
     static void staticAnonymousClass() {
         InnerClass innerClass = new InnerClass() {
+
+            // static int num; 编译报错,成员内部类里面不能有静态属性
+            final static int num = 1;//编译成功,因为是常量(字面量赋值,编译期就能确定)
+            //final static int num1 = new int[]{1}[0];//编译报错,虽然是static final修饰但是实际的值需要运行期解析,不是常量
+
             /**
              * 可以访问任何外围实例参数的属性
              * @param innerClass 外围类实例

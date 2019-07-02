@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+group 'com.fanyuwen'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    eurekaVersion = "1.7.2"
+    ribbonVersion = "2.2.5"
+    feignVersion = "9.5.0"
+}
+
+dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+    //eureka
+    compile group: 'com.netflix.eureka', name: 'eureka-client', version: "$eurekaVersion"
+//    compile group: 'com.netflix.eureka', name: 'eureka-core', version: "$eurekaVersion"
+    //ribbon
+//    compile group: 'com.netflix.ribbon', name: 'ribbon', version: "$ribbonVersion"
+    compile group: 'com.netflix.ribbon', name: 'ribbon-core', version: "$ribbonVersion"
+    compile group: 'com.netflix.ribbon', name: 'ribbon-loadbalancer', version: "$ribbonVersion"
+//    compile group: 'com.netflix.ribbon', name: 'ribbon-httpclient', version: "$ribbonVersion"
+    compile group: 'com.netflix.ribbon', name: 'ribbon-eureka', version: "$ribbonVersion"
+//    compile group: 'com.netflix.ribbon', name: 'ribbon-transport', version: "$ribbonVersion"
+    compile group: 'com.netflix.archaius', name: 'archaius-core', version: '0.7.4'
+
+    //feign
+    compile group: 'io.github.openfeign', name: 'feign-core', version: "$feignVersion"
+    compile group: 'io.github.openfeign', name: 'feign-jackson', version: "$feignVersion"
+    compile group: 'io.github.openfeign', name: 'feign-slf4j', version: "$feignVersion"
+    compile group: 'io.github.openfeign', name: 'feign-ribbon', version: "$feignVersion"
+    //javax inject java ee依赖注入的标准api
+    compile group: 'javax.inject', name: 'javax.inject', version: '1'
+    //javassist
+    compile group: 'org.javassist', name: 'javassist', version: '3.21.0-GA'
+
+}

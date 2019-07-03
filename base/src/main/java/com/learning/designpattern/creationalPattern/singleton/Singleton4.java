@@ -1,4 +1,4 @@
-package com.learning.designpattern.singleton;
+package com.learning.designpattern.creationalPattern.singleton;
 
 /**
  * @author fanyuwen

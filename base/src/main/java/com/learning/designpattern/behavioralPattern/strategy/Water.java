@@ -1,4 +1,4 @@
-package com.learning.designpattern.strategy;
+package com.learning.designpattern.behavioralPattern.strategy;
 
 /**
  * @author heshuzhuang

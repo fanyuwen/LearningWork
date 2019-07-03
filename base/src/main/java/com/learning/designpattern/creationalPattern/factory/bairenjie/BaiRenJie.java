@@ -1,6 +1,6 @@
-package com.learning.designpattern.factory.bairenjie;
+package com.learning.designpattern.creationalPattern.factory.bairenjie;
 
-import com.learning.designpattern.factory.OutstandingStudent;
+import com.learning.designpattern.creationalPattern.factory.OutstandingStudent;
 
 /**
  * @author fanyuwen

@@ -1,7 +1,7 @@
-package com.learning.designpattern.factory.heshuzhuang;
+package com.learning.designpattern.creationalPattern.factory.heshuzhuang;
 
-import com.learning.designpattern.factory.OutstandingStudent;
-import com.learning.designpattern.factory.TrainingCampFactory;
+import com.learning.designpattern.creationalPattern.factory.OutstandingStudent;
+import com.learning.designpattern.creationalPattern.factory.TrainingCampFactory;
 
 /**
  * @author fanyuwen

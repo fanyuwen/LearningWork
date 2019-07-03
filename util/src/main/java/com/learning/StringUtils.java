@@ -37,6 +37,12 @@ public class StringUtils {
         }
     }
 
+    /**
+     * 将字节(用int是因为基本类型的自动转换)转换成字符
+     *
+     * @param num 指定的字节值
+     * @return 对应的字符表示
+     */
     private static char byteToChar(int num) {
         if ((num & ~0xf) != 0) {
             throw new IllegalArgumentException("num is beyond the range.must be 0 ~ 15");
@@ -44,6 +50,12 @@ public class StringUtils {
         return (char) HEX_BYTE_CHAR[num];
     }
 
+    /**
+     * 将字符转换成字节表示
+     *
+     * @param ch 需要转换的字符
+     * @return 对应字符的字节表示
+     */
     private static byte charToByte(char ch) {
         if (!HEX_PATTERN.matcher(String.valueOf(ch)).matches()) {
             throw new IllegalArgumentException("ch is not the hex char.");

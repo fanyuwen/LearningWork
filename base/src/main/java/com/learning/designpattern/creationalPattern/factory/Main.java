@@ -1,8 +1,8 @@
-package com.learning.designpattern.factory;
+package com.learning.designpattern.creationalPattern.factory;
 
-import com.learning.designpattern.factory.bairenjie.BaiRenJieFactory;
-import com.learning.designpattern.factory.heshuzhuang.HeShuZhuangFactory;
-import com.learning.designpattern.factory.songwei.SongWeiFactory;
+import com.learning.designpattern.creationalPattern.factory.bairenjie.BaiRenJieFactory;
+import com.learning.designpattern.creationalPattern.factory.heshuzhuang.HeShuZhuangFactory;
+import com.learning.designpattern.creationalPattern.factory.songwei.SongWeiFactory;
 
 import java.util.Arrays;
 

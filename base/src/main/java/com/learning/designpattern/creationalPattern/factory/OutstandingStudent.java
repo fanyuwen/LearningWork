@@ -1,4 +1,4 @@
-package com.learning.designpattern.factory;
+package com.learning.designpattern.creationalPattern.factory;
 
 /**
  * @author fanyuwen

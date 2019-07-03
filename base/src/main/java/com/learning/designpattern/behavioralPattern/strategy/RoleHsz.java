@@ -1,4 +1,4 @@
-package com.learning.designpattern.strategy;
+package com.learning.designpattern.behavioralPattern.strategy;
 
 /**
  * 策略模式（可能会喝很多种东西）

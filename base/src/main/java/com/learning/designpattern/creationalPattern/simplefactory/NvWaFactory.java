@@ -1,4 +1,4 @@
-package com.learning.designpattern.simplefactory;
+package com.learning.designpattern.creationalPattern.simplefactory;
 
 /**
  * @author SONGWEI

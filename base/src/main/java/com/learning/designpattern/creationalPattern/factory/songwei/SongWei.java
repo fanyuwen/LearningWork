@@ -1,6 +1,6 @@
-package com.learning.designpattern.factory.songwei;
+package com.learning.designpattern.creationalPattern.factory.songwei;
 
-import com.learning.designpattern.factory.OutstandingStudent;
+import com.learning.designpattern.creationalPattern.factory.OutstandingStudent;
 
 /**
  * @author fanyuwen

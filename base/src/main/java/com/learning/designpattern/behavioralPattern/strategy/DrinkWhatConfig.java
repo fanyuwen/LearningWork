@@ -1,4 +1,4 @@
-package com.learning.designpattern.strategy;
+package com.learning.designpattern.behavioralPattern.strategy;
 
 /**
  * 决定你具体喝什么

@@ -1,4 +1,4 @@
-package com.learning.designpattern.mvc;
+package com.learning.designpattern.structuralPattern.mvc;
 
 
 /**

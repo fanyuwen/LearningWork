@@ -1,4 +1,4 @@
-package com.learning.designpattern.mvc;
+package com.learning.designpattern.structuralPattern.mvc;
 
 /**
  * mvc  设计模式思想 model -- view  -- controller

@@ -11,6 +11,6 @@ public class SpringApplication {
     private static final ConfigurableApplicationContext APPLICATION_CONTEXT = new AnnotationConfigApplicationContext(SpringConfigure.class);
 
     public static void main(String[] args) {
-
+        System.out.println(APPLICATION_CONTEXT.getBean("bairenjie1234"));
     }
 }

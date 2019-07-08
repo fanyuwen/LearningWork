@@ -24,4 +24,16 @@ public class InsertTest extends BaseArrayTest {
         Assert.assertArrayEquals(test_arrays, temp_array);
     }
 
+    @Test
+    public void testfastInsert() {
+        Insert insert = new Insert();
+        System.out.println("排序前: " + Arrays.toString(test_arrays));
+        int[] temp_array = test_arrays.clone();
+        insert.fastSort(test_arrays);
+        Arrays.sort(temp_array);
+        System.out.println("排序后: " + Arrays.toString(test_arrays));
+        System.out.println("排序后: " + Arrays.toString(temp_array));
+
+        Assert.assertArrayEquals(test_arrays, temp_array);
+    }
 }

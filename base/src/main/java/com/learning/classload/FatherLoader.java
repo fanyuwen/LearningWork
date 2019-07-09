@@ -4,7 +4,7 @@ package com.learning.classload;
  * @author fanyuwen
  * @date 2019/6/16 1:03
  */
-public class FatherLoader {
+public class FatherLoader implements GrandFatherLoader{
     static int initNUM(int num) {
         System.out.println(num);
         return num;

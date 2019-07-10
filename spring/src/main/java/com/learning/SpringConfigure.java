@@ -1,9 +1,10 @@
 package com.learning;
 
 import com.learning.resource.ResourceTest;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.core.io.*;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
@@ -11,12 +12,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Spring的总配置类
  */
 @Configuration
-@ComponentScan("com.learning")
+//@ComponentScan("com.learning")
+@Import({AnotherConfig.class})
 public class SpringConfigure {
 
     //基于java bean的方式将指定路径上的文件加载为 org.springframework.core.io.Resource
@@ -59,5 +63,11 @@ public class SpringConfigure {
 
         resourceTest.setResource(classPathResource);
         return resourceTest;
+    }
+
+    @Bean
+    @Qualifier("aaaa")
+    public List<String> createList() {
+        return Collections.singletonList("aaaadfdfdf");
     }
 }

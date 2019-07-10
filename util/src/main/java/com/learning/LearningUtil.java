@@ -3,9 +3,9 @@ package com.learning;
 /**
  * @author fanyuwen
  * @date 2019/6/17 11:28
- * Ñ§Ï°¹¤¾ßÀà,½ö½öÖ»ÊÇ¼ÇÂ¼Ò»Ğ©¹Ø¼üĞÔµÄÍøÒ³ÖªÊ¶·ÖÏí
- * http content-typeÏà¹Ø https://zccst.iteye.com/blog/2180127
- * cros ¿çÓòÏà¹Ø https://my.oschina.net/incess/blog/3060511
+ * å­¦ä¹ å·¥å…·ç±»,ä»…ä»…åªæ˜¯è®°å½•ä¸€äº›å…³é”®æ€§çš„ç½‘é¡µçŸ¥è¯†åˆ†äº«
+ * http content-typeç›¸å…³ https://zccst.iteye.com/blog/2180127
+ * cros è·¨åŸŸç›¸å…³ https://my.oschina.net/incess/blog/3060511
  */
 public class LearningUtil {
 }

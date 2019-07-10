@@ -203,12 +203,12 @@ public class EurekaOrigin {
 
             applicationContext.getBeanFactory()
                     .registerSingleton(beanName, Feign.builder()
-                    .client(ribbonClient)
-                    .logger(new Slf4jLogger())
-                    .logLevel(Logger.Level.FULL)
-                    .encoder(new JacksonEncoder())
-                    .decoder(new JacksonDecoder())
-                    .target(ctClass_feignInterface.toClass(Thread.currentThread().getContextClassLoader()), "http://" + serverName));
+                            .client(ribbonClient)
+                            .logger(new Slf4jLogger())
+                            .logLevel(Logger.Level.FULL)
+                            .encoder(new JacksonEncoder())
+                            .decoder(new JacksonDecoder())
+                            .target(ctClass_feignInterface.toClass(Thread.currentThread().getContextClassLoader()), "http://" + serverName));
         }
 
         return new Object();

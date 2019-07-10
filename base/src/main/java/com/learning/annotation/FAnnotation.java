@@ -1,9 +1,6 @@
 package com.learning.annotation;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * @author fanyuwen
@@ -17,8 +14,10 @@ public class FAnnotation {
 /**
  * 自定义注解
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Documented //表示该注解注解的元素自动生成javadoc文档
+@Inherited //表示该注解标识的影响会被子类继承
+@Retention(RetentionPolicy.RUNTIME)  //该注解存活级别(源码 类 运行时)
+@Target(ElementType.METHOD) //标注该注解能够标注的元素
 @interface Bairenjie {
 
     /**
@@ -27,5 +26,4 @@ public class FAnnotation {
      * @return String
      */
     String value();
-
 }

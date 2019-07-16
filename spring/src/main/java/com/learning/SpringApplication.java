@@ -1,9 +1,8 @@
 package com.learning;
 
+import com.learning.service.Bairenjie;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.util.Set;
 
 /**
  * @author fanyuwen
@@ -13,6 +12,7 @@ public class SpringApplication {
     private static final ConfigurableApplicationContext APPLICATION_CONTEXT = new AnnotationConfigApplicationContext(SpringConfigure.class);
 
     public static void main(String[] args) {
-        System.out.println(APPLICATION_CONTEXT.getBean(Set.class));
+        Bairenjie bairenjie = APPLICATION_CONTEXT.getBean(Bairenjie.class);
+        bairenjie.show();
     }
 }

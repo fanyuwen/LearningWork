@@ -3,6 +3,7 @@ package com.learning;
 import com.learning.resource.ResourceTest;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.io.*;
@@ -20,6 +21,7 @@ import java.util.List;
  */
 @Configuration
 //@ComponentScan("com.learning")
+@ComponentScan({"com.learning.interfacepackage", "com.learning.service"})
 @Import({AnotherConfig.class})
 public class SpringConfigure {
 

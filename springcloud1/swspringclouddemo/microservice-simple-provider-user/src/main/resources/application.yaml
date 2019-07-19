@@ -21,7 +21,7 @@ logging:
 
 management:
   security:
-    enabled: false # ²é¿´ÏêÇé
+    enabled: false # æŸ¥çœ‹è¯¦æƒ…
 
 info:
   app:

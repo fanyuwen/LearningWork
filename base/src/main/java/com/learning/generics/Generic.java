@@ -15,6 +15,21 @@ public class Generic<T> {
         B<? super String> sb = new B<>();
         sb.set("13123");
     }
+
+    /**
+     * java泛型与可变参数
+     * 可变参数本质上是转换成数组,但是java不支持创建泛型数组(原因自己思考)
+     * 当出现泛型类型的可变参数就会出现警告,无法创建参数化类型的可变参数
+     * 因为会出现诸如 Generic<List<String>> => 就会转化成 List<String>[] (可以声明,但不能创建)
+     * 这就会导致编译警告,处理方式是用{@link SuppressWarnings()}传入"unchecked",
+     * jdk1.7版本以上新增了一个注解 {@link SafeVarargs} 表示安全的可变参数
+    * @param param 参数化类型的可变参数
+     */
+    @SafeVarargs
+//    @SuppressWarnings("unchecked")
+    final void fun(T... param){
+
+    }
 }
 
 /**

@@ -17,6 +17,15 @@ public class People implements Serializable {
     //更新时间
     private Date upTime;
 
+    public People(int id, String name, int age, String hobby, Date esTime, Date upTime) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.hobby = hobby;
+        this.esTime = esTime;
+        this.upTime = upTime;
+    }
+
     public People(String name, int age, String hobby, Date esTime, Date upTime) {
         this.name = name;
         this.age = age;
@@ -75,5 +84,17 @@ public class People implements Serializable {
 
     public void setUpTime(Date upTime) {
         this.upTime = upTime;
+    }
+
+    @Override
+    public String toString() {
+        return "People{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", hobby='" + hobby + '\'' +
+                ", esTime=" + esTime +
+                ", upTime=" + upTime +
+                '}';
     }
 }

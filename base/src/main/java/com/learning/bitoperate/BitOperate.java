@@ -78,6 +78,7 @@ public class BitOperate {
 
     /**
      * 摩根定律
+     * 左右两边公式相等(等价)
      */
     void morganLaw() {
         boolean r;
@@ -87,19 +88,24 @@ public class BitOperate {
         //
         r = ~(x + 1) == ~x - 1;
         r = ~(x - 1) == ~x + 1;
+        r = ~x + 1 == -x;
         //
         r = ~-x == x - 1;
         r = -~x == x + 1;
+
         //
-        r = ~(x ^ y) == (~x ^ y);
         r = (~x ^ y) == XNOR(x, y);
+        r = ~(x ^ y) == (~x ^ y);
         //
-        r = ~(XNOR(x, y)) == XNOR(~x, y);
+        r = ~XNOR(x, y) == XNOR(~x, y);
         r = XNOR(~x, y) == (x ^ y);
         //
         r = ~(x + y) == ~x - y;
         r = ~(x - y) == ~x + y;
-        //上述公式
 
+        //上述公式
+        r = ~(x | -(x + 1)) == (~x & ~-(x + 1));
+        r = (~x & ~-(x + 1)) == (~x & ((x + 1) - 1));
+        r = ((~x & ((x + 1) - 1))) == (~x & x);// == 0
     }
 }

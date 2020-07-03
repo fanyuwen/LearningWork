@@ -29,4 +29,10 @@ public class FFloat {
     //2.使用decimal计算效率不高   =>    因为使用decimal时间和空间开销较大,选用int作为数据库存储格式比较合适,可以同时避免浮点存储计算的不精确和decimal
     //  的缺点。对于存储数值较大或者保留小数较多的数字,数据库存储结构可以选择bigint
     private float value;
+
+    void showImprecision() {
+        float f = 3.6f;
+        f += 0.1f;
+        System.out.println(f);
+    }
 }

@@ -13,6 +13,10 @@ include 'springbootactivemq'//spring boot 1 activemq
 include 'springcloud1'
 include 'springcloud2'
 include 'dubbo' //dubbo
+//添加 apt(annotation processor tool) ast(abstract syntax tree)
+include 'aptast'
+include 'aptast:annoprocetool'
+include 'aptast:client'
 
 //下面是 宋伟 的 spring cloud demo子模块
 include 'springcloud1:swspringclouddemo'
@@ -27,3 +31,4 @@ include 'springcloud1:primaryimpl:primaryeurekaclient' //原生实现(直接使�
 include 'springcloud1:primaryimpl:springcloudeurekaserver'//spring cloud eureka实现的eureka注册中心
 include 'springcloud1:primaryimpl:springcloudeurekaapplication'//spring cloud eureka实现的某个被调用的微服务
 include 'springcloud1:primaryimpl:myorigineurekaribbonfeign' //原生实现
+

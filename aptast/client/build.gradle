@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'com.fanyuwen'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+//compileJava.options.compilerArgs << "-processor" << "com.fanyuwen.processor.TestAnnotationProcessor"
+
+dependencies {
+    compile project(":aptast:annoprocetool")
+    annotationProcessor project(":aptast:annoprocetool")
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

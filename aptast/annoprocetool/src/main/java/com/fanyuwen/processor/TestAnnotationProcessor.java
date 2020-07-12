@@ -19,6 +19,8 @@ import javax.tools.Diagnostic;
 import java.util.Set;
 
 /**
+ * 参考网上的示例,实现一个自动生成set方法的类lombok实现
+ *
  * @author fanyuwen
  * @date 2020/7/12 1:17
  */

@@ -22,7 +22,8 @@ This project is mainly a summary of the problems encountered in the work and the
 10. **MQ** (kafka)(activeMQ)
 11. **redis** v:*(jedis)2.10.2*
 12. **单元测试(arquillian,junit,mockito,assertj,hoverfly,selenium)**
-13. **follow-up(只要是你感兴趣上面又没有列出来的,可以自己创建或者提出来)...**
+13. **apt(annotation processor tool)编译时注解处理工具和ast(abstract syntax tree)抽象语法树**
+14. **follow-up(只要是你感兴趣上面又没有列出来的,可以自己创建或者提出来)...**
 
 by *fanyuwen*
 

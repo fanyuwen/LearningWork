@@ -11,7 +11,7 @@ repositories {
     mavenCentral()
 }
 
-//compileJava.options.compilerArgs << "-processor" << "com.fanyuwen.processor.TestAnnotationProcessor"
+compileJava.options.compilerArgs << "-processor" << "com.fanyuwen.processor.LearningASTAnnotationProcessor"
 
 dependencies {
     compile project(":aptast:annoprocetool")

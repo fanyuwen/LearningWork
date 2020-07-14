@@ -1,1 +1,2 @@
 com.fanyuwen.processor.TestAnnotationProcessor
+com.fanyuwen.processor.LearningASTAnnotationProcessor

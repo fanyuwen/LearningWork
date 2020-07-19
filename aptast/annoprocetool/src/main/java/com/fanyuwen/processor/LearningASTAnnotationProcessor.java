@@ -92,8 +92,8 @@ public class LearningASTAnnotationProcessor extends AbstractProcessor {
                             List<JCTree.JCStatement> jcStatements = jcBlock.getStatements();
                             System.out.println("jcStatements : " + jcStatements);
                             VariableTree variableTree = (VariableTree)jcStatements.get(0);
-                            System.out.println(variableTree.getModifiers().getAnnotations().get(0).getAnnotationType());
-                            System.out.println(variableTree.getModifiers().getAnnotations().get(0).getClass());
+//                            System.out.println(variableTree.getModifiers().getAnnotations().get(0).getAnnotationType());
+//                            System.out.println(variableTree.getModifiers().getAnnotations().get(0).getClass());
                             try {
                                 jcBlock.stats = jcStatements.append(treeMaker.Exec(
 //                                    treeMaker.Apply(treeMaker.Types(List.of(new Type.JCVoidType())),

@@ -6,6 +6,6 @@ package com.fanyuwen.aptast.test;
  */
 public class Main {
     public static void main(String[] args) {
-        new MyTest().fun(1212313);
+        new MyTest().fun();
     }
 }

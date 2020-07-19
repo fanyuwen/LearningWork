@@ -46,6 +46,7 @@ public class TestAnnotationProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(TestAnnotation.class);
+        System.out.println("elements: " + elements);
         for (Element element : elements) {
             JCTree jcTree = javacTrees.getTree(element);
             jcTree.accept(new TreeTranslator() {

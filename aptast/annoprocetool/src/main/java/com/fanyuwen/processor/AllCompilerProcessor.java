@@ -142,7 +142,8 @@ public class AllCompilerProcessor extends AbstractProcessor {
                                         JCTree.JCFieldAccess jcFieldAccess =
                                                 (JCTree.JCFieldAccess) jcExpression1;
                                     }
-                                    hasInvocation = true;
+                                    if (!invocation.getMethodSelect().toString().contains("super"))
+                                        hasInvocation = true;
                                 }
                             }
                         }
@@ -187,7 +188,6 @@ public class AllCompilerProcessor extends AbstractProcessor {
                             }
                         }
                     }
-
                     System.out.println("end jcMethodDecl: " + jcMethodDecl);
                 }
             });

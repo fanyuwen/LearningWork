@@ -6,6 +6,6 @@ package com.fanyuwen.aptast.test;
  */
 public class MyTest1 {
     void fun1() {
-        new MyTest2().fun3();
+        new MyTest2().fun2();
     }
 }

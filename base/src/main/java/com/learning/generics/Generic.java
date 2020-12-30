@@ -14,6 +14,10 @@ public class Generic<T> {
         //因为是super 所以只能调用消费方法
         B<? super String> sb = new B<>();
         sb.set("13123");
+        //idea编译不报错,但是实际编译会报错
+        Type<? super C> type = new C();
+        //idea编译不报错,但是实际编译会栈溢出
+        Type<? super D<Byte>> d = new D<Byte>();
     }
 
     /**
@@ -23,11 +27,12 @@ public class Generic<T> {
      * 因为会出现诸如 Generic<List<String>> => 就会转化成 List<String>[] (可以声明,但不能创建)
      * 这就会导致编译警告,处理方式是用{@link SuppressWarnings()}传入"unchecked",
      * jdk1.7版本以上新增了一个注解 {@link SafeVarargs} 表示安全的可变参数
-    * @param param 参数化类型的可变参数
+     *
+     * @param param 参数化类型的可变参数
      */
     @SafeVarargs
 //    @SuppressWarnings("unchecked")
-    final void fun(T... param){
+    final void fun(T... param) {
 
     }
 }
@@ -75,5 +80,31 @@ class B<T> {
 
     void set(T value) {
         this.value = value;
+    }
+}
+
+
+interface Type<T> {
+    void fun(T param);
+}
+
+/**
+ * 泛型-->递归泛型
+ */
+class C implements Type<Type<? super C>>{
+    @Override
+    public void fun(Type<? super C> param) {
+
+    }
+}
+
+/**
+ * 递归泛型
+ * @param <P>
+ */
+class D<P> implements Type<Type<? super D<D<P>>>>{
+    @Override
+    public void fun(Type<? super D<D<P>>> param) {
+
     }
 }

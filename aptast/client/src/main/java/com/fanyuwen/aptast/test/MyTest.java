@@ -9,6 +9,7 @@ public class MyTest {
 
     void fun() {
         int lizihan = 12;
+        System.out.println("lizihan是个" + lizihan);
         new MyTest1().fun1();
     }
 }

@@ -47,28 +47,41 @@ public class AllCompilerProcessor extends AbstractProcessor {
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         Set<? extends Element> elements = roundEnv.getRootElements();
         messager.printMessage(Diagnostic.Kind.NOTE, "start to first compiler.");
-        //构造函数
-        TreeTranslator constructMethodDef = new TreeTranslator() {
-            @Override
-            public void visitMethodDef(JCTree.JCMethodDecl jcMethodDecl) {
-                JCTree.JCBlock jcBlock = jcMethodDecl.getBody();
-                List<JCTree.JCStatement> jcStatements = jcBlock.getStatements();
-                List<JCTree.JCStatement> tails = jcStatements.tail;
-                if (tails != null) {
-                    for (JCTree.JCStatement jcStatement : tails) {
-                        if (jcStatement instanceof JCTree.JCExpressionStatement) {
-                            JCTree.JCExpression jcExpression =
-                                    ((JCTree.JCExpressionStatement) jcStatement).getExpression();
-                            if (jcExpression instanceof JCTree.JCMethodInvocation) {
-                                JCTree.JCMethodInvocation jcMethodInvocation = (JCTree.JCMethodInvocation) jcExpression;
-                                JCTree.JCExpression jcExpression1 = jcMethodInvocation.getMethodSelect();
-                                if (jcExpression1 instanceof JCTree.JCNewClass) {
-                                    JCTree.JCNewClass jcNewClass = (JCTree.JCNewClass) jcExpression1;
-                                    JCTree.JCExpression classIdentifier = jcNewClass.getIdentifier();
-                                } else if (jcExpression1 instanceof JCTree.JCFieldAccess) {
-                                    //TODO sdfsdf
+        for (Element element : elements) {
+            JCTree jcTree = javacTrees.getTree(element);
+            jcTree.accept(new TreeTranslator() {
+                private Set<String> setNames = new HashSet<>();
+
+                @Override
+                public void visitClassDef(JCTree.JCClassDecl jcClassDecl) {
+                    System.out.println("into class Def...");
+                    List<JCTree> jcTrees = jcClassDecl.defs;
+                    for (JCTree jcTree1 : jcTrees) {
+                        if (jcTree1 instanceof JCTree.JCBlock) {
+                            System.out.println("into " + jcTree1 + ". start to contribute.");
+                            JCTree.JCBlock initBlock = (JCTree.JCBlock) jcTree1;
+                            List<JCTree.JCStatement> jcStatements = initBlock.getStatements();
+                            boolean hasInvocation = false;
+                            for (JCTree.JCStatement jcStatement : jcStatements) {
+                                if (jcStatement instanceof JCTree.JCExpressionStatement) {
+                                    JCTree.JCExpressionStatement jcExpressionStatement =
+                                            (JCTree.JCExpressionStatement) jcStatement;
+                                    JCTree.JCExpression jcExpression = jcExpressionStatement.getExpression();
+                                    if (jcExpression instanceof JCTree.JCMethodInvocation) {
+                                        JCTree.JCMethodInvocation invocation =
+                                                (JCTree.JCMethodInvocation) jcExpression;
+                                        JCTree.JCExpression jcExpression1 = invocation.getMethodSelect();
+                                        if (jcExpression1 instanceof JCTree.JCFieldAccess) {
+                                            JCTree.JCFieldAccess jcFieldAccess =
+                                                    (JCTree.JCFieldAccess) jcExpression1;
+                                        }
+                                        if (!invocation.getMethodSelect().toString().contains("super"))
+                                            hasInvocation = true;
+                                    }
                                 }
-                                JCTree.JCVariableDecl jcVariableDecl = treeMaker.VarDef(
+                            }
+                            if (hasInvocation) {
+                                initBlock.stats = initBlock.stats.prepend(treeMaker.VarDef(
                                         treeMaker.Modifiers(Flags.FINAL + Flags.BLOCK),
                                         names.fromString("traceId"),
                                         memberAccess("java.lang.String"),
@@ -80,24 +93,35 @@ public class AllCompilerProcessor extends AbstractProcessor {
                                                 ), names.fromString("toString")),
                                                 List.nil()
                                         )
-                                );
-                                jcBlock.stats = List.of(jcStatements.head).appendList(tails.prepend(jcVariableDecl));
+                                ));
+                                for (JCTree.JCStatement jcStatement : jcStatements) {
+                                    JCTree.JCExpressionStatement jcExpressionStatement;
+                                    JCTree.JCMethodInvocation methodInvocation;
+                                    if (jcStatement instanceof JCTree.JCExpressionStatement &&
+                                            (jcExpressionStatement = (JCTree.JCExpressionStatement) jcStatement) != null &&
+                                            jcExpressionStatement.getExpression() instanceof JCTree.JCMethodInvocation &&
+                                            (methodInvocation = (JCTree.JCMethodInvocation) jcExpressionStatement.getExpression()) != null
+                                    ) {
+                                        List<JCTree.JCExpression> argument = methodInvocation.getArguments();
+                                        String select;
+                                        if (!(select = methodInvocation.getMethodSelect().toString()).contains("super") &&
+                                                !select.contains("java")
+                                                && argument != null) {
+                                            System.out.println("select: -> " + select);
+                                            methodInvocation.args = argument.append(treeMaker.Ident(names.fromString("traceId")));
+                                        }
+                                    }
+                                }
                             }
                         }
+                        System.out.println("the result is " + jcTree1);
                     }
+                    super.visitClassDef(jcClassDecl);
                 }
-                super.visitMethodDef(jcMethodDecl);
-            }
-        };
-
-
-        for (Element element : elements) {
-            JCTree jcTree = javacTrees.getTree(element);
-            jcTree.accept(new TreeTranslator() {
-                private Set<String> setNames = new HashSet<>();
 
                 @Override
                 public void visitMethodDef(JCTree.JCMethodDecl jcMethodDecl) {
+                    System.out.println("into method Def...");
                     String name;
                     System.out.println("name: " + (name = jcMethodDecl.getName().toString()));
                     super.visitMethodDef(jcMethodDecl);
@@ -112,7 +136,6 @@ public class AllCompilerProcessor extends AbstractProcessor {
                         JCTree.JCBlock jcBlock = jcMethodDecl.getBody();
                         List<JCTree.JCStatement> jcStatements = jcBlock.getStatements();
                         JCTree.JCExpression expression = treeMaker.Binary(JCTree.Tag.PLUS, treeMaker.Literal("invoke " + name + " - tradeId: "), treeMaker.Ident(names.fromString("traceId")));
-                        System.out.println("expression: " + expression);
                         jcBlock.stats = jcStatements.prepend(treeMaker.Exec(treeMaker.Apply(
                                 List.of(memberAccess("java.lang.String")),
                                 memberAccess("java.lang.System.out.println"),
@@ -179,10 +202,15 @@ public class AllCompilerProcessor extends AbstractProcessor {
                                 ) {
                                     List<JCTree.JCExpression> argument = methodInvocation.getArguments();
                                     String select;
-                                    if (!(select = methodInvocation.getMethodSelect().toString()).contains("super") &&
+                                    JCTree.JCExpression methodSelect;
+                                    if (!(select = (methodSelect = methodInvocation.getMethodSelect()).toString()).contains("super") &&
                                             !select.contains("java")
                                             && argument != null) {
-                                        methodInvocation.args = argument.append(treeMaker.Ident(names.fromString("traceId")));
+                                        System.out.println("select: -> " + select);
+                                        System.out.println("methodSelect: " + rootFieldAccess((JCTree.JCFieldAccess) methodSelect).toString());
+                                        if (!rootFieldAccess((JCTree.JCFieldAccess) methodSelect).toString().contains("System")) {
+                                            methodInvocation.args = argument.append(treeMaker.Ident(names.fromString("traceId")));
+                                        }
                                     }
                                 }
                             }
@@ -193,6 +221,17 @@ public class AllCompilerProcessor extends AbstractProcessor {
             });
         }
         return true;
+    }
+
+    private JCTree.JCExpression rootFieldAccess(JCTree.JCFieldAccess access) {
+        JCTree.JCExpression jcExpression = access.getExpression();
+        System.out.println("jcExpression: " + jcExpression);
+        System.out.println("jcExpression: " + jcExpression.getClass());
+        if (jcExpression instanceof JCTree.JCFieldAccess) {
+            return rootFieldAccess((JCTree.JCFieldAccess) jcExpression);
+        } else {
+            return jcExpression;
+        }
     }
 
     private JCTree.JCExpression memberAccess(String components) {
